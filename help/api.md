@@ -2,9 +2,9 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 用于创建自定义应用程序的HTTP API。'
 translation-type: tm+mt
-source-git-commit: 18e97e544014933e9910a12bc40246daa445bf4f
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '2931'
+source-wordcount: '2925'
 ht-degree: 2%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # [!DNL Asset Compute Service] HTTP API {#asset-compute-http-api}
 
-API的使用仅限于开发目的。 在开发自定义应用程序时，API作为上下文提供。 [!DNL Adobe Experience Manager] 因为Cloud Service使用API将处理信息传递给自定义应用程序。 有关详细信息，请参 [阅使用资产微服务和处理用户档案](https://docs.adobe.com/content/help/zh-Hans/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+API的使用仅限于开发目的。 在开发自定义应用程序时，API作为上下文提供。 [!DNL Adobe Experience Manager] 因为Cloud Service使用API将处理信息传递给自定义应用程序。 有关详细信息，请参 [阅使用资产微服务和处理用户档案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 >[!NOTE]
 >
@@ -64,7 +64,7 @@ HTTP API的任何客 [!DNL Asset Compute Service] 户端都必须遵循以下高
 * 基本
    * scopes: `openid,AdobeID`
 
-* 资产计算
+* asset compute
    * metascope: `asset_compute_meta`
    * scopes: `asset_compute,read_organizations`
 
@@ -185,7 +185,7 @@ HTTP状态代码为：
 
 * **429请求太多**:在系统过载时发生。 客户端应在出现指数退 [避的情况下重试](https://en.wikipedia.org/wiki/Exponential_backoff)。 尸体是空的。
 
-* **4xx错误**:当出现任何其他客户端错误并取消注册失败时发生。 通常会返回此类JSON响应，但并不能保证所有错误都会返回：
+* **4xx错误**:发生任何其他客户端错误并注销失败的情况。 通常会返回此类JSON响应，但并不能保证所有错误都会返回：
 
    ```json
    {
@@ -349,7 +349,7 @@ HTTP状态代码为：
 
 ## 选择加入后期处理 {#opt-in-to-post-processing}
 
-资产 [计算SDK](https://github.com/adobe/asset-compute-sdk) 支持一组基本的图像后处理选项。 通过将再现对选择加入象上的字段设置为，自定 `postProcess` 义Worker可显式地进行后处理 `true`。
+asset compute [SDK](https://github.com/adobe/asset-compute-sdk) 支持一组基本的图像后处理选项。 通过将再现对选择加入象上的字段设置为，自定 `postProcess` 义Worker可显式地进行后处理 `true`。
 
 支持的用例有：
 
@@ -362,7 +362,7 @@ HTTP状态代码为：
 
 ## 水印资产 {#add-watermark}
 
-Asset [Compute SDK](https://github.com/adobe/asset-compute-sdk) 支持向PNG、JPEG、TIFF和GIF图像文件添加水印。 将按照再现对象中的再现说明 `watermark` 添加水印。
+asset compute [SDK](https://github.com/adobe/asset-compute-sdk) 支持向PNG、JPEG、TIFF和GIF图像文件添加水印。 将按照再现对象中的再现说明 `watermark` 添加水印。
 
 在再现后处理过程中，将执行水印操作。 要对资产设置水印，自定 [义工作者可通过](#opt-in-to-post-processing) 将演绎版对象 `postProcess` 上的字段设置为进行后处理 `true`。 如果工作者不选择加入，则不应用水印，即使在请求中的再现对象上设置了水印对象也是如此。
 
@@ -374,7 +374,7 @@ Asset [Compute SDK](https://github.com/adobe/asset-compute-sdk) 支持向PNG、J
 
 | 名称 | 类型 | 描述 | 示例 |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | 演绎版目标格式也可用于文 `text` 本提取和将XMP元 `xmp` 元数据提取为xml。 查看支 [持的格式](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/file-format-support.html) | `png` |
+| `fmt` | `string` | 演绎版目标格式也可用于文 `text` 本提取和将XMP元 `xmp` 元数据提取为xml。 查看支 [持的格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html) | `png` |
 | `worker` | `string` | 自定义应用 [程序的URL](develop-custom-application.md)。 必须是 `https://` URL。 如果此字段存在，则再现由自定义应用程序创建。 然后，自定义应用程序中将使用任何其他设置的再现字段。 | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | 应使用HTTPPUT将生成的演绎版上传到的URL。 | `http://w.com/img.jpg` |
 | `target` | `object` | 生成的再现的多部分预签名URL上传信息。 这适用于具 [有此多部件上传行为的AEM](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) / [Oak Direct Binary Upload](http://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html)。<br>字段:<ul><li>`urls`:字符串数组，每个预签名部件URL对应一个</li><li>`minPartSize`:用于一个部件的最小大小= url</li><li>`maxPartSize`:用于一个部件的最大大小= url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
@@ -382,7 +382,7 @@ Asset [Compute SDK](https://github.com/adobe/asset-compute-sdk) 支持向PNG、J
 
 ### 演绎版特定字段 {#rendition-specific-fields}
 
-有关当前支持的文件格式的列表，请参 [阅支持的文件格式](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/file-format-support.html)。
+有关当前支持的文件格式的列表，请参 [阅支持的文件格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
 
 | 名称 | 类型 | 描述 | 示例 |
 |-------------------|----------|-------------|---------|
