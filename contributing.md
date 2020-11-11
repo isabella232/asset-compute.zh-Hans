@@ -1,9 +1,9 @@
 ---
-source-git-commit: 324f414164ccbb712e7197ddc68075ea9c238cae
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
 translation-type: tm+mt
-source-wordcount: '519'
-ht-degree: 4%
+source-wordcount: '518'
+ht-degree: 2%
 
 ---
 # 为文档贡献
@@ -59,4 +59,4 @@ ht-degree: 4%
 
 ## 更多信息
 
-有关如何 [使用GitHub创作平台和受支持的Markdown语法的更多详细信息，请参](https://docs.adobe.com/help/en/contributor/contributor-guide/introduction.html) 阅《Adobe文档贡献者指南》。
+有关如何 [使用GitHub创作平台和受支持的Markdown语法的更多详细信息，请参](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) 阅《Adobe文档贡献者指南》。
