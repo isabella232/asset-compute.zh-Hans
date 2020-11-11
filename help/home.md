@@ -2,9 +2,9 @@
 title: '[!DNL Adobe Asset Compute Service] 用户指南.'
 description: 本文档 [!DNL Asset Compute Service] 涵盖诸如介绍、如何开发、管理、部署自定义代码以及对自定义代码进行疑难解答等问题。
 translation-type: tm+mt
-source-git-commit: 1c2a1dc41296bf26c432c51b5afa20cb07a4c5c5
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '195'
 ht-degree: 1%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 1%
 
 本文档涵盖 [!DNL Asset Compute Service] 了如何开发、管理、部署自定义代码以及对自定义代码进行疑难解答等主题。 要了解产 [!DNL Asset Compute Service] 品，请参阅此 [简介](introduction.md)。 了解服 [务可以为您做什么](introduction.md#possible-use-cases-benefits)。
 
-[!DNL Asset Compute Service] 支持多种文件格式的转换，并与多种Adobe服务集成。 查看支持的文 [件格式和服务集成的列表](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/file-format-support.html)。
+[!DNL Asset Compute Service] 支持多种文件格式的转换，并与多种Adobe服务集成。 查看支持的文 [件格式和服务集成的列表](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
 
 有关版本相关信息以及最新版本，请参阅 [发行说明](/help/release-notes.md)。
 
-请参阅关于Adobe Experience Manager [作为Cloud Service提供的资](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/asset-microservices-overview.html) 产microservices功能以及如何使用 [!DNL Experience Manager]microservices的概述。
+请参阅关于Adobe Experience Manager [作为Cloud Service提供的资](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html) 产microservices功能以及如何使用 [!DNL Experience Manager]microservices的概述。
 
 <!--
 Possible to record the below info here in this landing page to centralize the miscellaneous info about Asset Compute Service?
