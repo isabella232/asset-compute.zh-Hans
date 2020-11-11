@@ -2,9 +2,9 @@
 title: 针对 [!DNL Asset Compute Service]。
 description: 使用创建自定义应用程序 [!DNL Asset Compute Service]。
 translation-type: tm+mt
-source-git-commit: 127895cf1bab59546f9ba0be2b3b7a935627effb
+source-git-commit: 6de4e3cde9c38f2e23838f5d728dae23e15d2147
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1559'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ ht-degree: 0%
 
    在此阅读有关 [Firefly应用程序的主要组件](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application)。
 
-   模板应用程序利用我 [们的Asset Compute](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk) SDK来上传、下载和安排应用程序再现，因此开发人员只需要实施自定义应用程序逻辑。 在文件 `actions/<worker-name>` 夹中，文 `index.js` 件是添加自定义应用程序代码的位置。
+   模板应用程序利用我 [们的Asset compute](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk) SDK来上传、下载和安排应用程序再现，因此开发人员只需要实施自定义应用程序逻辑。 在文件 `actions/<worker-name>` 夹中，文 `index.js` 件是添加自定义应用程序代码的位置。
 
 有关自 [定义应用程序的示例](#try-sample) 和构思，请参阅自定义应用程序示例。
 
@@ -82,7 +82,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->这与作为存储的云 [!DNL Adobe Experience Manager] Cloud Service分开。 它仅适用于使用资产计算开发人员工具进行开发和测试。
+>这与作为存储的云 [!DNL Adobe Experience Manager] Cloud Service分开。 它仅适用于使用Asset compute开发者工具进行开发和测试。
 
 确保有权访问受支 [持的云存储容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可以由多个开发人员根据需要跨不同项目进行共享。
 
@@ -94,6 +94,12 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
    ```conf
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
+   ```
+
+1. 如果Firefly `console.json` 应用程序不直接位于根目录中，请添加Adobe开发人员控制台集成JSON文件的绝对路径。 这是在您的项 [`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user) 目工作区中下载的同一文件。 或者，您也可以使用该命 `aio app use <path_to_console_json>` 令，而不是将路径添加到ENV文件。
+
+   ```conf
+   ASSET_COMPUTE_INTEGRATION_FILE_PATH=
    ```
 
 1. 添加S3或Azure存储凭据。 您只需访问一个云存储解决方案。
@@ -113,7 +119,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 ## 执行应用程序 {#run-custom-application}
 
-在使用资产计算开发人员工具执行应用程序之前，请正确配置 [凭据](#developer-tool-credentials)。
+使用Asset compute开发者工具执行应用程序之前，请正确配置 [凭据](#developer-tool-credentials)。
 
 要在开发人员工具中运行应用程序，请使用 `aio app run` 命令。 它将动作部署到Adobe I/O Runtime，并在您的本地机器上开始开发工具。 此工具用于在开发过程中测试应用程序请求。 以下是一个再现请求示例：
 
@@ -128,7 +134,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->请勿将标志 `--local` 与命令一起 `run` 使用。 它不适用于自定义 [!DNL Asset Compute] 应用程序和资产计算开发人员工具。 自定义应用程序由调用， [!DNL Asset Compute Service] 它无法访问在开发人员的本地计算机上运行的操作。
+>请勿将标志 `--local` 与命令一起 `run` 使用。 它不适用于自定义 [!DNL Asset Compute] 应用程序和Asset compute开发人员工具。 自定义应用程序由调用， [!DNL Asset Compute Service] 它无法访问在开发人员的本地计算机上运行的操作。
 
 请参 [阅](test-custom-application.md) ：如何测试和调试应用程序。 开发完自定义应用程序后，请部 [署自定义应用程序](deploy-custom-application.md)。
 
@@ -208,7 +214,7 @@ exports.main = worker(async function (source, rendition) {
 
 ## 身份验证和授权支持 {#authentication-authorization-support}
 
-默认情况下，“资产计算”自定义应用程序随附Firefly应用程序的“授权”和“身份验证”检查。 可通过在中将注 `require-adobe-auth` 释设 `true` 置为启用 `manifest.yml`。
+默认情况下，Asset compute自定义应用程序随附Firefly应用程序的“授权”和“身份验证”检查。 可通过在中将注 `require-adobe-auth` 释设 `true` 置为启用 `manifest.yml`。
 
 ### 访问其他AdobeAPI {#access-adobe-apis}
 
@@ -272,14 +278,14 @@ const key = params.secretKey;
           concurrency: 1
 ```
 
-由于通常由Asset Compute应用程序进行的更广泛的处理，您更有可能必须调整这些限制以获得最佳性能（足够大以处理二进制资产）和效率(不会因未使用的容器内存而浪费资源)。
+由于Asset compute应用程序通常进行更广泛的处理，因此更可能必须调整这些限制以获得最佳性能（足够大以处理二进制资产）和效率(不会因未使用的容器内存而浪费资源)。
 
 运行时中操作的默认超时为一分钟，但可以通过设置限制(以毫 `timeout` 秒为单位)来增加。 如果希望处理较大的文件，请增加此次处理。 请考虑下载源、处理文件和上传演绎版所花费的总时间。 如果操作超时，即在指定超时限制之前不返回激活，运行时将放弃容器，而不重用它。
 
-资产计算应用程序本质上往往是网络和磁盘IO绑定的。 必须先下载源文件，处理过程通常占用大量IO，然后重新上传生成的演绎版。
+Asset compute应用程序从本质上来说往往是网络和磁盘IO绑定。 必须先下载源文件，处理过程通常占用大量IO，然后重新上传生成的演绎版。
 
 操作容器可用的内存以MB为 `memorySize` 单位。 目前，它还定义了容器获得的CPU访问量，最重要的是，它是使用运行时成本的一个关键要素(较大的容器成本更高)。 当您的处理需要更多内存或CPU时，请在此处使用较大的值，但不要浪费资源，因为容器越大，总体吞吐量越低。
 
-此外，可以使用该设置控制容器内的动作并发 `concurrency` 性。 这是单个激活（同一操作）获取的并发容器数。 在此模型中，操作容器类似于Node.js服务器，它接收多个并发请求，最高可达此限制。 如果未设置，则运行时中的默认值为200，这对较小的Firefly操作很有用，但由于资产计算应用程序的本地处理和磁盘活动更为密集，它们通常太大。 某些应用程序可能也无法与并发活动配合使用，具体取决于其实现。 资产计算SDK通过将文件写入不同的唯一文件夹来确保激活分开。
+此外，可以使用该设置控制容器内的动作并发 `concurrency` 性。 这是单个激活（同一操作）获取的并发容器数。 在此模型中，操作容器类似于Node.js服务器，它接收多个并发请求，最高可达此限制。 如果未设置，则运行时中的默认值为200，这对于较小的Firefly动作很有用，但对于Asset compute应用程序来说通常太大，因为它们的本地处理和磁盘活动更加密集。 某些应用程序可能也无法与并发活动配合使用，具体取决于其实现。 asset computeSDK通过将文件写入不同的唯一文件夹来确保激活分开。
 
 测试应用程序以找到和的最 `concurrency` 佳数 `memorySize`量。 较大的容器=较高的内存限制可能允许更多并发，但对于较低的流量也可能是浪费。
