@@ -2,23 +2,23 @@
 title: 了解扩展 [!DNL Asset Compute Service]。
 description: 何时以及如何扩展功 [!DNL Asset Compute Service] 能以进行自定义资产处理。
 translation-type: tm+mt
-source-git-commit: 54afa44d8d662ee1499a385f504fca073ab6c347
+source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
 workflow-type: tm+mt
-source-wordcount: '275'
-ht-degree: 3%
+source-wordcount: '271'
+ht-degree: 0%
 
 ---
 
 
 # 可扩展性简介 {#introduction-to-extensibilty}
 
-许多再现要求（如转换为格式和调整图像大小）都由处 [理用户档案 [!DNL Experience Manager] 作为Cloud Service解决](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/assets/asset-microservices-overview.html)。 更复杂的业务需求可能需要定制的解决方案来满足组织的需求。 [!DNL Asset Compute Service] 可以通过创建从中的处理用户档案调用的自定义应用程序进行扩展 [!DNL Experience Manager]。 这些自定义应用程序适合 [支持的用例](https://docs.adobe.com/content/help/zh-Hans/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+许多再现要求（如转换为格式和调整图像大小）都由处 [理用户档案 [!DNL Experience Manager] 作为Cloud Service解决](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)。 更复杂的业务需求可能需要定制的解决方案来满足组织的需求。 [!DNL Asset Compute Service] 可以通过创建从中的处理用户档案调用的自定义应用程序进行扩展 [!DNL Experience Manager]。 这些自定义应用程序适合 [支持的用例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 >[!NOTE]
 >
 >[!DNL Asset Compute Service] 只能与Cloud Service [!DNL Experience Manager] 一起使用。
 
-自定义应用程序是无头 [项目Firefly应用](https://github.com/AdobeDocs/project-firefly) 程序。 通过 [!DNL Asset Compute Service] Asset Compute SDK和Project Firefly开发人员工 [具，使用自定义应用程](https://github.com/adobe/asset-compute-sdk) 序进行扩展变得非常简单。 这使开发人员能专注于业务逻辑。 创建自定义应用程序与创建无服务器的简单Adobe I/O Runtime操作一样简单。 它是单个Node.js JavaScript函数。 基本 [的自定义应用程序示例](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) 说明了这一点。
+自定义应用程序是无头 [项目Firefly应用](https://github.com/AdobeDocs/project-firefly) 程序。 通过 [!DNL Asset Compute Service] Asset computeSDK和Project Firefly开发人员工具，可 [以简化](https://github.com/adobe/asset-compute-sdk) 自定义应用程序的扩展。 这使开发人员能专注于业务逻辑。 创建自定义应用程序与创建无服务器的简单Adobe I/O Runtime操作一样简单。 它是单个Node.js JavaScript函数。 基本 [的自定义应用程序示例](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) 说明了这一点。
 
 ## 先决条件和配置要求 {#prerequisites-and-provisioning}
 
