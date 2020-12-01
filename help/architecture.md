@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]的架构。'
 description: 如何 [!DNL Asset Compute Service] API、应用程序和SDK协同工作来提供云本机资产处理服务。
 translation-type: tm+mt
-source-git-commit: 0fb256f7d9f83fbae564d9fd52ee6b2f34c5d7e9
+source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # [!DNL Asset Compute Service] {#overview}的架构
 
-[!DNL Asset Compute Service]构建在无服务器的Adobe I/O Runtime平台上。 它为资产提供Adobe Sensei内容服务支持。 调用的客户端(仅支持[!DNL Experience Manager]作为Cloud Service)会提供其为资产寻找的由Adobe Sensei生成的信息。 返回的信息采用JSON格式。
+[!DNL Asset Compute Service]构建在无服务器的Adobe I/O Runtime平台上。 它为资产提供Adobe Sensei内容服务支持。 调用的客户端（仅[!DNL Experience Manager]作为[!DNL Cloud Service]受支持）提供了它为资产寻找的由Adobe Sensei生成的信息。 返回的信息采用JSON格式。
 
 [!DNL Asset Compute Service] 可通过基于创建自定义应用程序来扩展 [!DNL Project Firefly]。这些自定义应用程序是[!DNL Project Firefly]无外设应用程序，并执行任务，如添加自定义转换工具或调用外部API以执行图像操作。
 
