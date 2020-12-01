@@ -2,9 +2,9 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 用于创建自定义应用程序的HTTP API。'
 translation-type: tm+mt
-source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
+source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
 workflow-type: tm+mt
-source-wordcount: '2925'
+source-wordcount: '2921'
 ht-degree: 2%
 
 ---
@@ -12,11 +12,11 @@ ht-degree: 2%
 
 # [!DNL Asset Compute Service] HTTP API  {#asset-compute-http-api}
 
-API的使用仅限于开发目的。 在开发自定义应用程序时，API作为上下文提供。 [!DNL Adobe Experience Manager] 因为Cloud Service使用API将处理信息传递给自定义应用程序。有关详细信息，请参阅[使用资产微服务和处理用户档案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+API的使用仅限于开发目的。 在开发自定义应用程序时，API作为上下文提供。 [!DNL Adobe Experience Manager] 作为 [!DNL Cloud Service] 使用API将处理信息传递给自定义应用程序。有关详细信息，请参阅[使用资产微服务和处理用户档案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 >[!NOTE]
 >
->[!DNL Asset Compute Service] 仅可用作 [!DNL Experience Manager] Cloud Service。
+>[!DNL Asset Compute Service] 仅可与作 [!DNL Experience Manager] 为一起使 [!DNL Cloud Service]用
 
 [!DNL Asset Compute Service] HTTP API的任何客户端都必须遵循以下高级流：
 
