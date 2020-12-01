@@ -5,7 +5,7 @@ solution: Experience Manager
 type: Documentation
 audience: end-user
 user-guide-title: asset compute服务指南
-user-guide-description: 本文档 [!DNL Asset Compute Service] 涵盖如何开发、管理、部署自定义代码以及对自定义代码进行疑难解答。
+user-guide-description: 本文档涵盖 [!DNL Asset Compute Service] 任务，如如何开发、管理、部署自定义代码以及对自定义代码进行疑难解答。
 breadcrumb-title: asset compute服务指南
 breadcrumb-url: /docs/asset-compute/using/home.html
 solution-title: AEM Assets
@@ -22,7 +22,7 @@ ht-degree: 9%
 ---
 
 
-# asset compute服务用户指南 {#using}
+# asset compute服务用户指南{#using}
 
 + [asset compute服务用户指南](home.md)
 + [概述](introduction.md)
@@ -30,7 +30,7 @@ ht-degree: 9%
 + [支持的文件格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)
 + [架构](architecture.md)
 + [API参考](api.md)
-+ 扩展Asset compute服务 {#extend}
++ 扩展Asset compute服务{#extend}
    + [关于扩展计算服务](understand-extensibility.md)
    + [设置环境](setup-environment.md)
    + [了解应用程序的内部概念](custom-application-internals.md)
