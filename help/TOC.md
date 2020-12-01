@@ -14,10 +14,10 @@ getting-started-url: https://experienceleague.adobe.com/docs/experience-manager-
 tutorials-title: AEM 教程
 tutorials-url: https://experienceleague.adobe.com/docs/experience-manager-learn/assets/overview.html
 translation-type: tm+mt
-source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
+source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
 workflow-type: tm+mt
-source-wordcount: '124'
-ht-degree: 9%
+source-wordcount: '120'
+ht-degree: 10%
 
 ---
 
@@ -37,6 +37,6 @@ ht-degree: 9%
    + [开发自定义应用程序](develop-custom-application.md)
    + [测试自定义应用程序](test-custom-application.md)
    + [部署自定义应用程序](deploy-custom-application.md)
-   + [在Experience Manager中作为Cloud Service集成和使用](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
+   + [集成和使 [!DNL Experience Manager] 用inas a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
 + [故障诊断](troubleshooting.md)
 + [为开放源码项目贡献内容](contribute-to-compute-service.md)
