@@ -1,8 +1,8 @@
 ---
-source-git-commit: 0a0feacbcd6456e01a6d451f9954ab21c1a8bce3
+source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
 workflow-type: tm+mt
 translation-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '646'
 ht-degree: 5%
 
 ---
@@ -30,9 +30,9 @@ ht-degree: 5%
 
 ### 文档贡献不是为了回答客户查询
 
-您可能需要改进文档的任何想法都值得欢迎，作为贡献。 但是，评论、问题和拉取请求仅用于 *稿件* 。 它们不用于回答您有关如何使用产品、实施项目或解决技术问题的问题。
+您可能需要改进文档的任何想法都值得欢迎，作为贡献。 但是，评论、问题和拉取请求仅针对&#x200B;*贡献*。 它们不用于回答您有关如何使用产品、实施项目或解决技术问题的问题。
 
-您可能遇到的与使用情况或技术错误有关的任何问题都应通过Experience Cloud企业支持门户通过正常 [支持流程报告](https://helpx.adobe.com/cn/contact/enterprise-support.ec.html) ，或在Experience Manager社 [区中讨论](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community)。
+如果您遇到与使用情况或技术错误相关的任何问题，应通过常规支持流程通过[[!DNL Experience Cloud] 企业支持门户](https://helpx.adobe.com/cn/contact/enterprise-support.ec.html)报告，或在[[!DNL Experience Manager] 社区](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community)中讨论。
 
 文档稿件不是Adobe客户服务的替代品***，任何寻求支持相关问题答案的此类稿件都将被拒绝。
 
@@ -60,7 +60,7 @@ ht-degree: 5%
 
 #### 遵循Microsoft Style手册
 
-[Microsoft Manual of Style是免费提供的文档样式指南](https://docs.microsoft.com/en-us/style-guide/welcome/) ，重点介绍软件文档。
+[Microsoft Manual of Style是免费](https://docs.microsoft.com/en-us/style-guide/welcome/) 提供的文档样式指南，重点介绍软件文档。
 
 ### 格式化
 
