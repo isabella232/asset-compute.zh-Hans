@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]简介。'
 description: '[!DNL Asset Compute Service] 是一种云本机资产处理服务，可降低复杂性并提高可扩展性。'
 translation-type: tm+mt
-source-git-commit: 79630efa8cee2c8919d11e9bb3c14ee4ef54d0f3
+source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
 workflow-type: tm+mt
-source-wordcount: '321'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->目前，[!DNL Asset Compute Service]只能通过[!DNL Experience Manager]用作Cloud Service。 管理员创建可调用[!DNL Asset Compute Service]以传递要处理的资源的处理用户档案。 请参阅[使用资产微服务和处理用户档案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
+>目前，[!DNL Asset Compute Service]只能通过[!DNL Experience Manager]作为[!DNL Cloud Service]使用。 管理员创建可调用[!DNL Asset Compute Service]以传递要处理的资源的处理用户档案。 请参阅[使用资产微服务和处理用户档案](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
 ## 支持[!DNL Asset Compute Service] {#possible-use-cases-benefits}的用例
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 >[!MORELIKETHIS]
 >
->* [以Adobe Experience Manager为Cloud Service的资产微型服务资产处理概述](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)。
+>* [资产微型服务资产处理 [!DNL Adobe Experience Manager] 概述a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)。
 >* [Project Firefly的文档](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
 >* [支持处理的文件格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
 >* [asset compute服务发行说明](release-notes.md)
