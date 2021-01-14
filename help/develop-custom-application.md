@@ -2,9 +2,9 @@
 title: 为 [!DNL Asset Compute Service]进行开发。
 description: 使用 [!DNL Asset Compute Service]创建自定义应用程序。
 translation-type: tm+mt
-source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
+source-git-commit: 576936cc7527fc4cb43c0859a61df5fecc0bc3a8
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1569'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
    create console.json
    ```
 
-1. 当提示`Which Adobe I/O App features do you want to enable for this project?`时，请至少选择`Actions`:
+1. 当出现提示`Which Adobe I/O App features do you want to enable for this project?`时，选择`Actions`。 请确保取消选择`Web Assets`选项，因为Web资源使用不同的身份验证和授权检查。
 
    ```bash
    ? Which Adobe I/O App features do you want to enable for this project?
@@ -231,7 +231,7 @@ const orgId = params.auth.orgId; // Experience Cloud Organization
 
 ### 传递第三方系统的凭据{#pass-credentials-for-tp}
 
-要处理其他外部服务的凭据，请将这些凭据作为操作的默认参数进行传递。 在传输中会自动加密这些文件。 有关详细信息，请参阅《运行时开发人员指南》[中的“创建操作”。 ](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md)然后在部署过程中使用环境变量设置它们。 这些参数可在操作内的`params`对象中访问。
+要处理其他外部服务的凭据，请将这些凭据作为操作的默认参数进行传递。 在传输中会自动加密这些文件。 有关详细信息，请参阅《运行时开发人员指南》](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md)中的“创建操作”。 [然后在部署过程中使用环境变量设置它们。 这些参数可在操作内的`params`对象中访问。
 
 在`manifest.yml`的`inputs`中设置默认参数：
 
