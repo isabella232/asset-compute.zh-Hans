@@ -2,9 +2,9 @@
 title: 了解自定义应用程序的工作。
 description: 内部工作 [!DNL Asset Compute Service] 自定义应用程序有助于了解其工作方式。
 translation-type: tm+mt
-source-git-commit: 54afa44d8d662ee1499a385f504fca073ab6c347
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 注册{#registration}
 
-客户端必须在向[`/process`](api.md#process-request)发出第一个请求之前调用[`/register`](api.md#register)一次，以设置和检索日志URL以接收Adobe I/O事件进行AdobeAsset compute。
+客户端必须在向[`/process`](api.md#process-request)发出第一个请求之前调用[`/register`](api.md#register)一次，以设置和检索日志URL，以接收[!DNL Adobe I/O]的AdobeAsset compute事件。
 
 ```sh
 curl -X POST \
@@ -49,7 +49,7 @@ curl -X POST \
 
 客户端负责使用预签名URL正确设置演绎版格式。 [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript库可用于NodeJS应用程序中预签URL。 目前，该库仅支持Azure Blob存储和AWS S3容器。
 
-处理请求返回`requestId`，它可用于轮询Adobe I/O事件。
+处理请求返回`requestId`，它可用于轮询[!DNL Adobe I/O]事件。
 
 以下是自定义应用程序处理请求示例。
 
@@ -71,7 +71,7 @@ curl -X POST \
 
 [!DNL Asset Compute Service]会向自定义应用程序发送自定义应用程序再现请求。 它对提供的应用程序URL使用HTTPPOST，该URL是来自Project Firefly的安全Web操作URL。 所有请求都使用HTTPS协议来最大化数据安全性。
 
-自定义应用程序使用的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)处理HTTPPOST请求。 它还处理源的下载、上传再现、发送I/O事件和错误处理。
+自定义应用程序使用的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk)处理HTTPPOST请求。 它还处理源的下载、上传演绎版、发送[!DNL Adobe I/O]事件和错误处理。
 
 <!-- TBD: Add the application diagram. -->
 
@@ -115,13 +115,13 @@ SDK为每个再现调用异步[再现回调函数](https://github.com/adobe/asse
 
 `batchWorker()`具有不同的行为，因为它实际处理所有再现，并且只有在所有已处理的演绎版都上载了这些演绎版。
 
-## Adobe I/O事件{#aio-events}
+## [!DNL Adobe I/O] 事件 {#aio-events}
 
-SDK会为每个再现发送Adobe I/O事件。 根据结果，这些事件为`rendition_created`或`rendition_failed`类型。 有关Asset compute详细信息，请参见[事件异步事件](api.md#asynchronous-events)。
+SDK会为每个再现发送[!DNL Adobe I/O]事件。 根据结果，这些事件为`rendition_created`或`rendition_failed`类型。 有关Asset compute详细信息，请参见[事件异步事件](api.md#asynchronous-events)。
 
-## 接收Adobe I/O事件{#receive-aio-events}
+## 接收[!DNL Adobe I/O]事件{#receive-aio-events}
 
-客户机根据其消耗逻辑轮询[Adobe I/O事件日志](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#/Journaling)。 初始日志URL是`/register` API响应中提供的URL。 事件可以使用事件中存在的`requestId`进行标识，该值与`/process`中返回的值相同。 每个再现都有一个单独的事件，在再现上传（或失败）后立即发送。 在收到匹配的事件后，客户端可以显示或以其他方式处理生成的演绎版。
+客户机根据其消耗逻辑轮询[[!DNL Adobe I/O] 事件日志](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#/Journaling)。 初始日志URL是`/register` API响应中提供的URL。 事件可以使用事件中存在的`requestId`进行标识，该值与`/process`中返回的值相同。 每个再现都有一个单独的事件，在再现上传（或失败）后立即发送。 在收到匹配的事件后，客户端可以显示或以其他方式处理生成的演绎版。
 
 JavaScript库[`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage)使用`waitActivation()`方法简化日志轮询以获取所有事件。
 
@@ -141,7 +141,7 @@ await Promise.all(events.map(event => {
 }));
 ```
 
-有关如何获取日志事件的详细信息，请参阅[Adobe I/O事件API](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#!adobedocs/adobeio-events/master/events-api-reference.yaml)。
+有关如何获取日志事件的详细信息，请参阅[[!DNL Adobe I/O] 事件API](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#!adobedocs/adobeio-events/master/events-api-reference.yaml)。
 
 <!-- TBD:
 * Illustration of the controls/data flow.
