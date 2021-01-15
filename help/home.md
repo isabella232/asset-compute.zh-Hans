@@ -2,9 +2,9 @@
 title: '[!DNL Adobe Asset Compute Service] 用户指南.'
 description: 本文档涵盖 [!DNL Asset Compute Service] 任务，如简介、如何开发、管理、部署自定义代码以及对自定义代码进行疑难解答。
 translation-type: tm+mt
-source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '187'
 ht-degree: 1%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # 关于 [!DNL Asset Compute Service]
 
-[!DNL Asset Compute Service] 是Adobe Experience Cloud的一项可扩展的可扩展服务，用于处理数字资产。它可以将图像、视频、文档和其他文件格式转换为不同的再现，包括缩略图、提取的文本和元数据、存档等。 开发人员可以插入自定义应用程序（也称为自定义工作程序）来解决自定义用例，使用[Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)构建并运行在无服务器[Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime.html)中。
+[!DNL Asset Compute Service] 是Adobe Experience Cloud的一项可扩展的可扩展服务，用于处理数字资产。它可以将图像、视频、文档和其他文件格式转换为不同的再现，包括缩略图、提取的文本和元数据、存档等。 开发人员可以插入自定义应用程序（也称为自定义工作程序）以解决自定义用例，这些用例使用[Project Firefly](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)构建并在无服务器[[!DNL Adobe I/O] Runtime](https://www.adobe.io/apis/experienceplatform/runtime.html)中运行。
 
 本文档涵盖[!DNL Asset Compute Service]主题，如如何开发、管理、部署自定义代码以及对其进行疑难解答。 要了解[!DNL Asset Compute Service]产品是什么，请参阅此[简介](introduction.md)。 请查看[服务可以为您做什么](introduction.md#possible-use-cases-benefits)。
 
