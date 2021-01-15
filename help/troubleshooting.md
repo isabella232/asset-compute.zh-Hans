@@ -2,9 +2,9 @@
 title: 故障诊断 [!DNL Asset Compute Service].
 description: 使用 [!DNL Asset Compute Service]对自定义应用程序进行疑难解答和调试。
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '288'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 * 确保故障清除可能导致的任何错误不会生成隐藏原始问题的错误。
 
 * 首次通过新的[!DNL Asset Compute Service]集成启动开发者工具时，它可能会失败第一个处理请求，因为Asset compute事件日志可能未完全设置。 请等待一段时间，日志设置，然后再发送其他请求。
-* 如果发送Asset compute`/register`或`/process`请求时遇到错误，请确保将所有必需的API添加到[!DNL Adobe I/O]项目和工作区，即Asset compute、IO事件、IO事件管理和运行时。
+* 如果发送Asset compute`/register`或`/process`请求时出错，请确保将所有必要的API添加到[!DNL Adobe I/O]项目和工作区，即Asset compute、[!DNL Adobe I/O]事件、[!DNL Adobe I/O]事件管理和[!DNL Adobe I/O]运行时。
 
 ## 通过[!DNL Adobe I/O] CLI {#login-via-aio-cli}登录问题
 
