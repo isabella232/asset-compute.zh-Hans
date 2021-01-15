@@ -2,9 +2,9 @@
 title: 为 [!DNL Asset Compute Service]进行开发。
 description: 使用 [!DNL Asset Compute Service]创建自定义应用程序。
 translation-type: tm+mt
-source-git-commit: 576936cc7527fc4cb43c0859a61df5fecc0bc3a8
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '1569'
+source-wordcount: '1560'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 创建自定义应用程序{#create-custom-application}
 
-确保本地安装了[Adobe I/OCLI](https://github.com/adobe/aio-cli)。
+确保本地安装[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli)。
 
 1. 要创建自定义应用程序，[创建Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#4-bootstrapping-new-app-using-the-cli)。 为此，请在终端中执行`aio app init <app-name>`。
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 
    ```sh
    $ aio app init <app-name>
-   Retrieving information from Adobe I/O Console..
+   Retrieving information from [!DNL Adobe I/O] Console.
    ? Select Org My Adobe Org
    ? Select Project MyFireflyProject
    ? Select Workspace myworkspace
@@ -121,7 +121,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 在使用Asset compute开发者工具执行应用程序之前，请正确配置[凭据](#developer-tool-credentials)。
 
-要在开发人员工具中运行应用程序，请使用`aio app run`命令。 它将动作部署到Adobe I/O Runtime，并在您的本地机器上开始开发工具。 此工具用于在开发过程中测试应用程序请求。 以下是一个再现请求示例：
+要在开发人员工具中运行应用程序，请使用`aio app run`命令。 它将操作部署到[!DNL Adobe I/O]运行时，并在本地机器上开始开发工具。 此工具用于在开发过程中测试应用程序请求。 以下是一个再现请求示例：
 
 ```json
 "renditions": [
@@ -266,7 +266,7 @@ const key = params.secretKey;
 
 ## 调整应用程序大小{#sizing-workers}
 
-应用程序在Adobe I/O Runtime的容器下执行，其中[限制](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)可通过`manifest.yml`进行配置：
+应用程序在[!DNL Adobe I/O]运行时中以[limits](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)的容器执行，该限制可通过`manifest.yml`进行配置：
 
 ```yaml
     actions:
