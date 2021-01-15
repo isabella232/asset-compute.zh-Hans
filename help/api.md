@@ -2,9 +2,9 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 用于创建自定义应用程序的HTTP API。'
 translation-type: tm+mt
-source-git-commit: c392b8588929f7b13db13e42a3f17bbc4f68a376
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '2921'
+source-wordcount: '2906'
 ht-degree: 2%
 
 ---
@@ -68,11 +68,11 @@ API的使用仅限于开发目的。 在开发自定义应用程序时，API作�
    * metascope:`asset_compute_meta`
    * 范围：`asset_compute,read_organizations`
 
-* Adobe I/O事件
+* [!DNL Adobe I/O] 事件
    * metascope:`event_receiver_api`
    * 范围：`event_receiver,event_receiver_api`
 
-* Adobe I/O管理API
+* [!DNL Adobe I/O] 管理API
    * metascope:`ent_adobeio_sdk`
    * 范围：`adobeio_api,additional_info.roles,additional_info.projectedProductContext`
 
@@ -412,9 +412,9 @@ PNG格式用作水印。
 
 ## 异步事件{#asynchronous-events}
 
-一旦再现处理完成或出现错误，事件就被发送到[Adobe I/O事件日志](https://www.adobe.io/apis/experienceplatform/events/documentation.html#!adobedocs/adobeio-events/master/intro/journaling_api.md)。 客户端必须侦听通过[/register](#register)提供的日志URL。 日志响应包括一个`event`数组，由每个事件的一个对象组成，其中`event`字段包括实际事件有效负荷。
+一旦再现处理完成或出现错误，事件就被发送到[[!DNL Adobe I/O] 事件日志](https://www.adobe.io/apis/experienceplatform/events/documentation.html#!adobedocs/adobeio-events/master/intro/journaling_api.md)。 客户端必须侦听通过[/register](#register)提供的日志URL。 日志响应包括一个`event`数组，由每个事件的一个对象组成，其中`event`字段包括实际事件有效负荷。
 
-[!DNL Asset Compute Service]所有事件的Adobe I/O事件类型为`asset_compute`。 该日志仅自动订阅此事件类型，并且不再需要基于Adobe I/O事件类型进行筛选。 服务特定事件类型位于事件的`type`属性中。
+[!DNL Asset Compute Service]的所有事件的[!DNL Adobe I/O]事件类型为`asset_compute`。 该日志仅自动订阅此事件类型，并且不再需要基于[!DNL Adobe I/O]事件类型进行筛选。 服务特定事件类型位于事件的`type`属性中。
 
 ### 事件类型{#event-types}
 
