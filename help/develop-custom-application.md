@@ -2,9 +2,9 @@
 title: 为 [!DNL Asset Compute Service]进行开发。
 description: 使用 [!DNL Asset Compute Service]创建自定义应用程序。
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1562'
 ht-degree: 0%
 
 ---
@@ -282,7 +282,7 @@ const key = params.secretKey;
 
 运行时中操作的默认超时为一分钟，但可以通过设置`timeout`限制（以毫秒为单位）来增加。 如果希望处理较大的文件，请增加此次处理。 请考虑下载源、处理文件和上传演绎版所花费的总时间。 如果操作超时，即在指定超时限制之前不返回激活，运行时将放弃容器，而不重用它。
 
-Asset compute应用程序从本质上来说往往是网络和磁盘IO绑定。 必须先下载源文件，处理过程通常占用大量IO，然后重新上传生成的演绎版。
+Asset compute应用程序从本质上来说往往是网络和磁盘输入或输出绑定。 必须先下载源文件，处理通常占用大量资源，然后重新上传生成的演绎版。
 
 操作容器可用的内存由`memorySize`指定(MB)。 目前，它还定义了容器获得的CPU访问量，最重要的是，它是使用运行时成本的一个关键要素(较大的容器成本更高)。 当您的处理需要更多内存或CPU时，请在此处使用较大的值，但不要浪费资源，因为容器越大，总体吞吐量越低。
 
