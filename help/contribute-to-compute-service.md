@@ -2,9 +2,9 @@
 title: 贡献到 [!DNL Asset Compute Service]的开源组件。
 description: 贡献到 [!DNL Asset Compute Service]的开源组件。
 translation-type: tm+mt
-source-git-commit: 127895cf1bab59546f9ba0be2b3b7a935627effb
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,11 @@ ht-degree: 0%
 
 ## 可用资源和库{#available-resources}
 
-请参阅此[开源库](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)的列表，用于[!DNL Asset Compute Service]。 此外，Adobe I/O Runtime和OpenWhisk现有资源包括：
+请参阅此[开源库](https://github.com/adobe/asset-compute-sdk#available-resources-and-libraries)的列表，用于[!DNL Asset Compute Service]。 此外，可用的[!DNL Adobe I/O] Runtime和OpenWhisk资源包括：
 
 * [开始使用Apache OpenWhisk](https://github.com/apache/incubator-openwhisk/tree/master/docs#getting-started-with-openwhisk)。
-* [实验：利用Adobe Sensei功能和Adobe I/O Runtime构建可合成的人工智能](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)。
-* [Adobe I/O Runtime常见问题解答](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/resources/faq.md)
+* [实验：使用Runtime构建可 [!DNL Adobe Sensei] functions and [!DNL Adobe I/O] 合成的AI](https://opensource.adobe.com/adobe-sensei-ai-functions/index.html)。
+* [[!DNL Adobe I/O] 运行时常见问题解答](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/resources/faq.md)
 
 <!-- **TBD** for post-release:
 * Link to Firefly open-source components.
