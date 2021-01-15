@@ -2,9 +2,9 @@
 title: 故障诊断 [!DNL Asset Compute Service].
 description: 使用 [!DNL Asset Compute Service]对自定义应用程序进行疑难解答和调试。
 translation-type: tm+mt
-source-git-commit: 68d910cd092fccb599c361f24daff80460129e1c
+source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '290'
 ht-degree: 1%
 
 ---
@@ -19,17 +19,17 @@ ht-degree: 1%
 * 确保故障清除可能导致的任何错误不会生成隐藏原始问题的错误。
 
 * 首次通过新的[!DNL Asset Compute Service]集成启动开发者工具时，它可能会失败第一个处理请求，因为Asset compute事件日志可能未完全设置。 请等待一段时间，日志设置，然后再发送其他请求。
-* 如果发送Asset compute`/register`或`/process`请求时遇到错误，请确保将所有必要的API添加到Adobe I/O项目和工作区，即Asset compute、IO事件、IO事件管理和运行时。
+* 如果发送Asset compute`/register`或`/process`请求时遇到错误，请确保将所有必需的API添加到[!DNL Adobe I/O]项目和工作区，即Asset compute、IO事件、IO事件管理和运行时。
 
-## 通过Adobe I/OCLI {#login-via-aio-cli}登录问题
+## 通过[!DNL Adobe I/O] CLI {#login-via-aio-cli}登录问题
 
-如果通过Adobe I/OCLI](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)登录到[!DNL Adobe Developer Console] [时遇到问题，请手动添加开发、测试和部署自定义应用程序所需的凭据：
+如果通过 [!DNL Adobe I/O] CLI](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)登录到[!DNL Adobe Developer Console] [时遇到问题，请手动添加开发、测试和部署自定义应用程序所需的凭据：
 
 1. 在[Adobe开发者控制台](https://console.adobe.io/)上导航到您的Firefly项目和工作区，然后按右上角的&#x200B;**[!UICONTROL 下载]**。 打开此文件，并将此JSON保存到您计算机上的安全位置。
 
 1. 导览至Firefly应用程序中的ENV文件。
 
-1. 添加Adobe I/O Runtime凭据。 从下载的JSON中获取Adobe I/O Runtime凭据。 凭据位于`project.workspace.services.runtime`下。 在`AIO_runtime_XXX`变量中添加I/O Runtime凭据：
+1. 添加[!DNL Adobe I/O]运行时凭据。 从下载的JSON中获取[!DNL Adobe I/O] A Runtime凭据。 凭据位于`project.workspace.services.runtime`下。 在`AIO_runtime_XXX`变量中添加[!DNL Adobe I/O]运行时凭据：
 
    ```json
    AIO_runtime_auth=
