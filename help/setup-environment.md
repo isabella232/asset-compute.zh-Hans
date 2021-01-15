@@ -2,9 +2,9 @@
 title: 设置 [!DNL Asset Compute Service]所需的开发环境。
 description: ' [!DNL Asset Compute Service] 的开发人员环境设置用于开始创建和测试自定义代码。'
 translation-type: tm+mt
-source-git-commit: 0ecf2c044c7847029fb10ce37f4b831c58b93fe9
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
    * [Docker Desktop](https://www.docker.com/get-started)。
    * [NodeJS](https://nodejs.org) （v10到v12 LTS，不推荐奇数版本）和 [NPM](https://www.npmjs.com)。OSX HomeBrew的用户可以执行`brew install node`以安装这两个软件。 否则，从[NodeJS下载页面](https://nodejs.org/en/)下载。
    * 对于NodeJS，我们建议使用[Visual Studio代码（VS代码）](https://code.visualstudio.com)作为调试器支持的IDE，因为它是IDE。 您可以将任何其他IDE用作代码编辑器，但尚不支持高级用法（如调试器）。
-   * [AIO CLI](https://github.com/adobe/aio-cli) (`aio`)-使用安装 `npm install -g @adobe/aio-cli`。
+   * [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) (`aio`)-使用安装 `npm install -g @adobe/aio-cli`。
 
 1. 确保满足[先决条件](/help/understand-extensibility.md#prerequisites-and-provisioning)。
 
