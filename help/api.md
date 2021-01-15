@@ -2,7 +2,7 @@
 title: '[!DNL Asset Compute Service] HTTP API。'
 description: '[!DNL Asset Compute Service] 用于创建自定义应用程序的HTTP API。'
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
 source-wordcount: '2906'
 ht-degree: 2%
@@ -38,7 +38,7 @@ API的使用仅限于开发目的。 在开发自定义应用程序时，API作�
 
 1. `Authorization` header with bearer token，它是技术帐户令牌，通过JWT exchange从Adobe开 [发](https://www.adobe.io/authentication/auth-methods.html) 者控制台项目接收。下面介绍了[范围](#scopes)。
 
-<!-- TBD: Change the existing URL to a new path when a new path for docs is available. The current path contains master word that is not an inclusive term. Logged ticket in AIO's GitHub repo to get a new URL.
+<!-- TBD: Change the existing URL to a new path when a new path for docs is available. The current path contains master word that is not an inclusive term. Logged ticket in Adobe I/O's GitHub repo to get a new URL.
 -->
 
 1. `x-gw-ims-org-id` 头和IMS组织ID。
