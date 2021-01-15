@@ -2,9 +2,9 @@
 title: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序。
 description: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序。
 translation-type: tm+mt
-source-git-commit: 54afa44d8d662ee1499a385f504fca073ab6c347
+source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ asset compute应用单元测试框架允许测试应用程序而无需编写任�
 
 ### 添加测试{#add-tests}
 
-测试应位于AIO项目根级别的`test`文件夹中。 每个应用程序的测试用例应位于路径`test/asset-compute/<worker-name>`中，每个测试用例对应一个文件夹：
+测试应位于[!DNL Adobe I/O]项目的根级别的`test`文件夹中。 每个应用程序的测试用例应位于路径`test/asset-compute/<worker-name>`中，每个测试用例对应一个文件夹：
 
 ```yaml
 action/
