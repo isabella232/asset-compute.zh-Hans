@@ -1,8 +1,8 @@
 ---
-title: 部署 [!DNL Asset Compute Service] 自定义应用程序。
+title: 部署 [!DNL Asset Compute Service] 自定义应用程序
 description: 部署 [!DNL Asset Compute Service] 自定义应用程序。
 translation-type: tm+mt
-source-git-commit: 78c1246f5fc42006013701a6cf4d375a1d8c9fd8
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '183'
 ht-degree: 0%
