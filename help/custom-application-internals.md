@@ -1,8 +1,8 @@
 ---
-title: 了解自定义应用程序的工作。
+title: 了解自定义应用程序的工作
 description: 内部工作 [!DNL Asset Compute Service] 自定义应用程序有助于了解其工作方式。
 translation-type: tm+mt
-source-git-commit: d26ae470507e187249a472ececf5f08d803a636c
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '751'
 ht-degree: 0%
