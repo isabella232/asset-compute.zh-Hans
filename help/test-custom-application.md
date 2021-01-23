@@ -1,8 +1,8 @@
 ---
-title: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序。
+title: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序
 description: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序。
 translation-type: tm+mt
-source-git-commit: 7e520921ebb459c963d61d70c66497b8e62521cf
+source-git-commit: 95e384d2a298b3237d4f93673161272744e7f44a
 workflow-type: tm+mt
 source-wordcount: '787'
 ht-degree: 0%
