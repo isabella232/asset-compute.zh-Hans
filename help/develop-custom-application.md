@@ -2,7 +2,7 @@
 title: 为 [!DNL Asset Compute Service]开发
 description: 使用 [!DNL Asset Compute Service]创建自定义应用程序。
 translation-type: tm+mt
-source-git-commit: 33b72b164faeda2dd425656209790f019ccec96e
+source-git-commit: 7ae47fdb7ff91e1388d2037d90abe35fe5218216
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -15,20 +15,20 @@ ht-degree: 0%
 开始开发自定义应用程序之前：
 
 * 确保满足所有[先决条件](/help/understand-extensibility.md#prerequisites-and-provisioning)。
-* 安装所需的[软件工具](/help/setup-environment.md#create-dev-environment)。
+* 安装[所需的软件工具](/help/setup-environment.md#create-dev-environment)。
 * 请参阅[设置环境](setup-environment.md)以确保您已准备好创建自定义应用程序。
 
 ## 创建自定义应用程序{#create-custom-application}
 
-确保本地安装[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli)。
+确保本地安装了[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli)。
 
-1. 要创建自定义应用程序，[创建Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#4-bootstrapping-new-app-using-the-cli)。 为此，请在终端中执行`aio app init <app-name>`。
+1. 要创建自定义应用程序，[请创建Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#4-bootstrapping-new-app-using-the-cli)。 要执行此操作，请在终端中执行`aio app init <app-name>`。
 
-   如果您尚未登录，则此命令会提示浏览器，要求您使用您的Adobe ID登录[Adobe开发者控制台](https://console.adobe.io/)。 有关从cli登录的详细信息，请参阅[此处](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)。
+   如果您尚未登录，此命令将提示浏览器，要求您使用Adobe ID登录[Adobe开发人员控制台](https://console.adobe.io/)。 有关从cli登录的详细信息，请参阅[此处](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)。
 
-   Adobe建议您登录。 如果您遇到问题，请按照说明[创建应用程序而不登录](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)。
+   Adobe建议您登录。 如果您遇到问题，请按照说明[创建应用程序，而不登录](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)。
 
-1. 登录后，按照CLI中的提示操作，选择`Organization`、`Project`和`Workspace`用于应用程序。 选择您在[设置环境](setup-environment.md)时创建的项目和工作区。
+1. 登录后，按照CLI中的提示操作，选择`Organization`、`Project`和`Workspace`用于应用程序。 选择在[设置环境](setup-environment.md)时创建的项目和工作区。
 
    ```sh
    $ aio app init <app-name>
@@ -39,7 +39,7 @@ ht-degree: 0%
    create console.json
    ```
 
-1. 当出现提示`Which Adobe I/O App features do you want to enable for this project?`时，选择`Actions`。 请确保取消选择`Web Assets`选项，因为Web资源使用不同的身份验证和授权检查。
+1. 出现提示时，选择`Actions`。 `Which Adobe I/O App features do you want to enable for this project?`请确保取消选择`Web Assets`选项，因为Web资源使用不同的身份验证和授权检查。
 
    ```bash
    ? Which Adobe I/O App features do you want to enable for this project?
@@ -50,7 +50,7 @@ ht-degree: 0%
    ◯ CI/CD: Include GitHub Actions based workflows for Build, Test and Deploy
    ```
 
-1. 当提示`Which type of sample actions do you want to create?`时，请确保选择`Adobe Asset Compute Worker`:
+1. 出现提示`Which type of sample actions do you want to create?`时，请确保选择`Adobe Asset Compute Worker`:
 
    ```bash
    ? Which type of sample actions do you want to create?
@@ -59,17 +59,17 @@ ht-degree: 0%
    ◯ Generic
    ```
 
-1. 按照其余提示操作，在Visual Studio代码（或您最喜爱的代码编辑器）中打开新的应用程序。 它包含自定义应用程序的基架和示例代码。
+1. 按照其余提示操作，在Visual Studio代码（或您喜爱的代码编辑器）中打开新应用程序。 它包含自定义应用程序的基架和示例代码。
 
-   请在此处阅读有关Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application)的[主要组件。
+   在此阅读有关Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application)的[主要组件的信息。
 
-   模板应用程序利用我们的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)来上传、下载和安排应用程序再现，因此开发人员只需要实现自定义应用程序逻辑。 在`actions/<worker-name>`文件夹中，`index.js`文件是添加自定义应用程序代码的位置。
+   模板应用程序利用我们的[Asset compute SDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)来上传、下载和安排应用程序再现，因此开发人员只需实现自定义应用程序逻辑。 在`actions/<worker-name>`文件夹中，`index.js`文件是添加自定义应用程序代码的位置。
 
 有关自定义应用程序的示例和构思，请参见[示例自定义应用程序](#try-sample)。
 
 ### 添加凭据{#add-credentials}
 
-在创建应用程序时登录时，将在ENV文件中收集大多数Firefly凭据。 但是，使用开发人员工具需要其他凭据。
+当您在创建应用程序时登录时，大多数Firefly凭据会收集到您的ENV文件中。 但是，使用开发人员工具需要其他凭据。
 
 <!-- TBD: Check if manual setup of credentials is required.
 Manual set up of credentials is removed from troubleshooting and best practices page. Link was broken.
@@ -78,17 +78,17 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 #### 开发人员工具存储凭据{#developer-tool-credentials}
 
-用于使用实际[!DNL Asset Compute service]测试自定义应用程序的开发人员工具需要一个云存储容器来托管测试文件以及接收和显示应用程序生成的演绎版。
+用于使用实际[!DNL Asset Compute service]测试自定义应用程序的开发人员工具需要一个云存储容器，用于托管测试文件以及接收和显示应用程序生成的演绎版。
 
 >[!NOTE]
 >
->这与作为[!DNL Cloud Service]的[!DNL Adobe Experience Manager]的云存储分开。 它仅适用于使用Asset compute开发者工具进行开发和测试。
+>这与作为[!DNL Cloud Service]的[!DNL Adobe Experience Manager]的云存储不同。 它仅适用于使用Asset compute开发者工具进行开发和测试。
 
-确保有权访问[支持的云存储容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可以由多个开发人员根据需要跨不同项目进行共享。
+确保有权访问[支持的云存储容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可以由多个开发人员根据需要跨不同项目共享。
 
-#### 向ENV文件{#add-credentials-env-file}添加凭据
+#### 将凭据添加到ENV文件{#add-credentials-env-file}
 
-将开发人员工具的以下凭据添加到Firefly项目根目录的ENV文件中：
+将开发人员工具的以下凭据添加到Firefly项目根目录的ENV文件：
 
 1. 将服务添加到Firefly项目时创建的私钥文件的绝对路径：
 
@@ -96,16 +96,16 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
    ASSET_COMPUTE_PRIVATE_KEY_FILE_PATH=
    ```
 
-1. 从Adobe开发人员控制台下载文件。 转到项目的根目录，然后单击右上角的“全部下载”。 文件名为`<namespace>-<workspace>.json`。 执行下列操作之一：
+1. 从Adobe Developer控制台下载文件。 转到项目的根目录并单击右上角的“全部下载”。 文件名将以`<namespace>-<workspace>.json`下载。 执行下列操作之一：
 
-   * 将文件重命名为`config.json`，并将其移到项目的根目录中。
-   * 或者，您也可以添加Adobe开发人员控制台集成JSON文件的绝对路径。 这是在项目工作区中下载的相同[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)文件。
+   * 将文件重命名为`console.json`并将其移到项目的根中。
+   * 或者，您也可以添加Adobe开发人员控制台集成JSON文件的绝对路径。 这是在您的项目工作区中下载的相同[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)文件。
 
       ```conf
       ASSET_COMPUTE_INTEGRATION_FILE_PATH=
       ```
 
-1. 添加S3或Azure存储凭据。 您只需访问一个云存储解决方案。
+1. 添加S3或Azure存储凭据。 您只需要访问一个云存储解决方案。
 
    ```conf
    # S3 credentials
@@ -122,13 +122,13 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!TIP]
 >
->`config.json`文件包含凭据。 从您的项目中，将JSON文件添加到您的`.gitignore`文件以阻止共享。 .env和。aio文件也是如此。
+>`config.json`文件包含凭据。 从您的项目中，将JSON文件添加到您的`.gitignore`文件以阻止共享。 同样的情况也适用于.env和.aio文件。
 
 ## 执行应用程序{#run-custom-application}
 
-在使用Asset compute开发者工具执行应用程序之前，请正确配置[凭据](#developer-tool-credentials)。
+在使用Asset compute Developer Tool执行应用程序之前，请正确配置[凭据](#developer-tool-credentials)。
 
-要在开发人员工具中运行应用程序，请使用`aio app run`命令。 它将操作部署到[!DNL Adobe I/O]运行时，并在本地机器上开始开发工具。 此工具用于在开发过程中测试应用程序请求。 以下是一个再现请求示例：
+要在开发人员工具中运行应用程序，请使用`aio app run`命令。 它将操作部署到[!DNL Adobe I/O]运行时，并开始本地机器上的开发工具。 此工具用于在开发过程中测试应用程序请求。 以下是一个再现请求示例：
 
 ```json
 "renditions": [
@@ -141,16 +141,16 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 >[!NOTE]
 >
->请勿将`--local`标志与`run`命令一起使用。 它不适用于[!DNL Asset Compute]自定义应用程序和Asset compute开发者工具。 自定义应用程序由[!DNL Asset Compute Service]调用，后者无法访问在开发人员的本地计算机上运行的操作。
+>请勿将`--local`标志与`run`命令一起使用。 它不适用于[!DNL Asset Compute]自定义应用程序和Asset compute Developer工具。 自定义应用程序由[!DNL Asset Compute Service]调用，后者无法访问在开发人员的本地计算机上运行的操作。
 
-请参阅[此处](test-custom-application.md)如何测试和调试应用程序。 开发完自定义应用程序后，[部署自定义应用程序](deploy-custom-application.md)。
+请参阅[此处](test-custom-application.md)如何测试和调试应用程序。 完成自定义应用程序开发后，[将部署自定义应用程序](deploy-custom-application.md)。
 
-## 尝试Adobe{#try-sample}提供的范例应用程序
+## 试用Adobe {#try-sample}提供的示例应用程序
 
-以下是自定义应用程序的示例：
+以下是自定义应用程序示例：
 
 * [worker-basic](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic)
-* [工人——动物图片](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-animal-pictures)
+* [工人 — 动物图片](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-animal-pictures)
 
 ### 模板自定义应用程序{#template-custom-application}
 
@@ -172,7 +172,7 @@ exports.main = worker(async (source, rendition) => {
 
 ## 调用外部API {#call-external-api}
 
-在应用程序代码中，您可以发出外部API调用以帮助处理应用程序。 以下是调用外部API的应用程序文件示例。
+在应用程序代码中，您可以发出外部API调用以帮助处理应用程序。 下面是调用外部API的应用程序文件示例。
 
 ```javascript
 exports.main = worker(async function (source, rendition) {
@@ -184,7 +184,7 @@ exports.main = worker(async function (source, rendition) {
 });
 ```
 
-例如，[`worker-animal-pictures`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L46)使用[`node-httptransfer`](https://github.com/adobe/node-httptransfer#node-httptransfer)库从Wikimedia对静态URL发出提取请求。
+例如，[`worker-animal-pictures`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L46)使用[`node-httptransfer`](https://github.com/adobe/node-httptransfer#node-httptransfer)库从维基媒体对静态URL发出提取请求。
 
 <!-- TBD: Revisit later to see if this note is required.
 >[!NOTE]
@@ -194,7 +194,7 @@ exports.main = worker(async function (source, rendition) {
 
 ### 传递自定义参数{#pass-custom-parameters}
 
-您可以通过再现对象传递自定义参数。 它们可以在[`rendition`说明](https://github.com/adobe/asset-compute-sdk#rendition)中在应用程序内部引用。 再现对象的示例如下：
+您可以通过再现对象传递自定义的参数。 它们可以在[`rendition` instructions](https://github.com/adobe/asset-compute-sdk#rendition)的应用程序内部引用。 再现对象的示例如下：
 
 ```json
 "renditions": [
@@ -206,7 +206,7 @@ exports.main = worker(async function (source, rendition) {
 ]
 ```
 
-访问自定义参数的应用程序文件的示例如下：
+访问自定义参数的应用程序文件示例如下：
 
 ```javascript
 exports.main = worker(async function (source, rendition) {
@@ -217,18 +217,18 @@ exports.main = worker(async function (source, rendition) {
 });
 ```
 
-`example-worker-animal-pictures`传递一个自定义参数[`animal`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L39)，以确定从维基媒体获取哪个文件。
+`example-worker-animal-pictures`传递一个自定义参数[`animal`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L39)，以确定从维基媒体中提取哪个文件。
 
 ## 身份验证和授权支持{#authentication-authorization-support}
 
-默认情况下，Asset compute自定义应用程序随附Firefly应用程序的“授权”和“身份验证”检查。 通过将`require-adobe-auth`注释设置为`manifest.yml`中的`true`可启用此功能。
+默认情况下，Asset compute自定义应用程序随Firefly应用程序的“授权”和“身份验证”检查一起提供。 可通过将`require-adobe-auth`注释设置为`manifest.yml`中的`true`来启用此功能。
 
 ### 访问其他AdobeAPI {#access-adobe-apis}
 
 <!-- TBD: Revisit this section. Where do we document console workspace creation?
 -->
 
-将API服务添加到在安装程序中创建的[!DNL Asset Compute]控制台工作区。 这些服务是[!DNL Asset Compute Service]生成的JWT访问令牌的一部分。 令牌和其他凭据可在应用程序操作`params`对象中访问。
+将API服务添加到在安装程序中创建的[!DNL Asset Compute]控制台工作区。 这些服务是由[!DNL Asset Compute Service]生成的JWT访问令牌的一部分。 令牌和其他凭据可在应用程序操作`params`对象中访问。
 
 ```javascript
 const accessToken = params.auth.accessToken; // JWT token for Technical Account with entitlements from the console workspace to the API service
@@ -236,9 +236,9 @@ const clientId = params.auth.clientId; // Technical Account client Id
 const orgId = params.auth.orgId; // Experience Cloud Organization
 ```
 
-### 传递第三方系统的凭据{#pass-credentials-for-tp}
+### 传递第三方系统{#pass-credentials-for-tp}的凭据
 
-要处理其他外部服务的凭据，请将这些凭据作为操作的默认参数进行传递。 在传输中会自动加密这些文件。 有关详细信息，请参阅《运行时开发人员指南》](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md)中的“创建操作”。 [然后在部署过程中使用环境变量设置它们。 这些参数可在操作内的`params`对象中访问。
+要处理其他外部服务的凭据，请将这些凭据作为操作的默认参数传递。 在传输过程中，这些文件会自动加密。 有关详细信息，请参阅《运行时开发人员指南》](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md)中的“创建操作”。 [然后在部署过程中使用环境变量设置它们。 可以在操作内的`params`对象中访问这些参数。
 
 在`manifest.yml`的`inputs`中设置默认参数：
 
@@ -258,14 +258,14 @@ packages:
 
 `$VAR`表达式从名为`VAR`的环境变量中读取该值。
 
-在开发过程中，除了从调用的外壳程序中设置的变量外，还可以在本地ENV文件中设置该值，因为`aio`会自动从ENV文件中读取环境变量。 在本示例中，ENV文件如下所示：
+在开发过程中，除了从调用的外壳中设置的变量外，还可以在本地ENV文件中设置该值，因为`aio`会自动从ENV文件中读取环境变量。 在此示例中，ENV文件如下所示：
 
 ```CONF
 #...
 SECRET_KEY=secret-value
 ```
 
-对于生产部署，您可以在CI系统中设置环境变量，例如在GitHub Actions中使用机密。 最后，访问应用程序内的默认参数，如：
+对于生产部署，您可以在CI系统中设置环境变量，例如使用GitHub Actions中的机密。 最后，访问应用程序内的默认参数，如下所示：
 
 ```javascript
 const key = params.secretKey;
@@ -273,7 +273,7 @@ const key = params.secretKey;
 
 ## 调整应用程序大小{#sizing-workers}
 
-应用程序在[!DNL Adobe I/O]运行时中以[limits](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)的容器执行，该限制可通过`manifest.yml`进行配置：
+应用程序在[!DNL Adobe I/O]运行时中以[limits](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)的容器中执行，可通过`manifest.yml`进行配置：
 
 ```yaml
     actions:
@@ -285,14 +285,14 @@ const key = params.secretKey;
           concurrency: 1
 ```
 
-由于Asset compute应用程序通常进行更广泛的处理，因此更可能必须调整这些限制以获得最佳性能（足够大以处理二进制资产）和效率(不会因未使用的容器内存而浪费资源)。
+由于Asset compute应用程序通常进行更广泛的处理，因此更有可能必须调整这些限制以获得最佳性能（足以处理二进制资产）和效率(不会因未使用的容器内存而浪费资源)。
 
-运行时中操作的默认超时为一分钟，但可以通过设置`timeout`限制（以毫秒为单位）来增加。 如果希望处理较大的文件，请增加此次处理。 请考虑下载源、处理文件和上传演绎版所花费的总时间。 如果操作超时，即在指定超时限制之前不返回激活，运行时将放弃容器，而不重用它。
+运行时中操作的默认超时为一分钟，但可以通过设置`timeout`限制（以毫秒为单位）来增加。 如果希望处理较大的文件，请增加此次。 请考虑下载源、处理文件和上传再现所需的总时间。 如果操作超时，即在指定的超时限制之前不返回激活,Runtime会放弃容器，而不会重复使用。
 
-Asset compute应用程序从本质上来说往往是网络和磁盘输入或输出绑定。 必须先下载源文件，处理通常占用大量资源，然后重新上传生成的演绎版。
+Asset compute应用程序从本质上看往往是网络和磁盘输入或输出绑定。 必须先下载源文件，处理通常占用大量资源，然后再上载生成的演绎版。
 
-操作容器可用的内存由`memorySize`指定(MB)。 目前，它还定义了容器获得的CPU访问量，最重要的是，它是使用运行时成本的一个关键要素(较大的容器成本更高)。 当您的处理需要更多内存或CPU时，请在此处使用较大的值，但不要浪费资源，因为容器越大，总体吞吐量越低。
+`memorySize`以MB为单位指定了可用于操作容器的内存。 目前，它还定义了容器获取的CPU访问量，最重要的是，它是使用Runtime(较大容器的成本更高)成本的关键因素。 当处理需要更多内存或CPU时，请在此处使用较大的值，但不要浪费资源，因为容器越大，总体吞吐量越低。
 
-此外，还可以使用`concurrency`设置控制容器内的操作并发。 这是单个激活（同一操作）获取的并发容器数。 在此模型中，操作容器类似于Node.js服务器，它接收多个并发请求，最高可达此限制。 如果未设置，则运行时中的默认值为200，这对于较小的Firefly动作很有用，但对于Asset compute应用程序来说通常太大，因为它们的本地处理和磁盘活动更加密集。 某些应用程序可能也无法与并发活动配合使用，具体取决于其实现。 asset computeSDK通过将文件写入不同的唯一文件夹来确保激活分开。
+此外，可以使用`concurrency`设置控制容器内的动作并发。 这是单个容器（同一操作）获取的并发激活数。 在此模型中，操作容器类似于接收多个并发请求的Node.js服务器，但不超过此限制。 如果未设置，则运行时中的默认值为200，这对于较小的Firefly动作很有用，但由于Asset compute应用程序的本地处理和磁盘活动更为密集，因此通常对Firefly应用程序来说太大。 某些应用程序（取决于其实现）可能也无法与并发活动一起正常工作。 asset compute SDK通过将文件写入不同的唯一文件夹来确保激活分开。
 
-测试应用程序以找到`concurrency`和`memorySize`的最佳数字。 较大的容器=较高的内存限制可能允许更多并发，但对于较低的流量也可能是浪费。
+测试应用程序以找到`concurrency`和`memorySize`的最佳数字。 较大的容器=内存限制的提高可能允许更多并发，但对于较低的流量也可能是浪费。
