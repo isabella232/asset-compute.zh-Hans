@@ -1,9 +1,9 @@
 ---
 cloud: Experience Cloud
-product: asset compute service
+product: adobe experience manager
 solution: Experience Manager, Experience Manager Assets
-type: 文档
-role: 开发人员
+type: Documentation
+role: Developer
 user-guide-title: asset compute服务指南
 user-guide-description: 本文档涵盖 [!DNL Asset Compute Service] 任务，如如何开发、管理、部署自定义代码以及排除自定义代码故障。
 breadcrumb-title: asset compute服务指南
@@ -14,10 +14,10 @@ getting-started-url: https://experienceleague.adobe.com/docs/experience-manager-
 tutorials-title: AEM 教程
 tutorials-url: https://experienceleague.adobe.com/docs/experience-manager-learn/assets/overview.html
 translation-type: tm+mt
-source-git-commit: 1cf682be00c984fa523963f5d4358575efffb50b
+source-git-commit: 3f306f2006ba1520ea5266a93a7912720f96b412
 workflow-type: tm+mt
-source-wordcount: '122'
-ht-degree: 11%
+source-wordcount: '120'
+ht-degree: 10%
 
 ---
 
