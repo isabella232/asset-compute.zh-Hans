@@ -2,10 +2,9 @@
 title: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序
 description: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序。
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-translation-type: tm+mt
-source-git-commit: 9bc1534671c81a05798f98ae556d348bc771d975
+source-git-commit: ebc0d717b3f6fc4518f4a79cd44ebe8fdcf9ec6a
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '811'
 ht-degree: 0%
 
 ---
@@ -137,6 +136,10 @@ tests/
 ### 测试预期错误{#test-unexpected-errors}
 
 错误测试案例不应包含预期的`rendition.*`文件，并应在`params.json`文件中定义预期的`errorReason`。
+
+>[!NOTE]
+>
+>如果测试用例不包含预期的`rendition.*`文件，并且未在`params.json`文件中定义预期的`errorReason`，则假定它是任何`errorReason`的错误用例。
 
 错误测试用例结构：
 
