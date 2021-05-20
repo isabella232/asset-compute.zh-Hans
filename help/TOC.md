@@ -5,7 +5,7 @@ solution: Experience Manager, Experience Manager Assets
 type: Documentation
 role: Developer
 user-guide-title: asset compute服务指南
-user-guide-description: 本文档涵盖 [!DNL Asset Compute Service] 任务，如如何开发、管理、部署自定义代码以及排除自定义代码故障。
+user-guide-description: 本文档涵盖 [!DNL Asset Compute Service] 任务，例如如何开发、管理、部署自定义代码，以及对其进行故障诊断。
 breadcrumb-title: asset compute服务指南
 breadcrumb-url: /docs/asset-compute/using/home.html
 solution-title: AEM Assets
@@ -13,7 +13,6 @@ solution-hub-url: https://experienceleague.adobe.com/docs/experience-manager-clo
 getting-started-url: https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html
 tutorials-title: AEM 教程
 tutorials-url: https://experienceleague.adobe.com/docs/experience-manager-learn/assets/overview.html
-translation-type: tm+mt
 source-git-commit: 3f306f2006ba1520ea5266a93a7912720f96b412
 workflow-type: tm+mt
 source-wordcount: '120'
@@ -22,7 +21,7 @@ ht-degree: 10%
 ---
 
 
-# asset compute服务用户指南{#using}
+# asset compute服务用户指南 {#using}
 
 + [asset compute服务用户指南](home.md)
 + [概述](introduction.md)
@@ -39,4 +38,4 @@ ht-degree: 10%
    + [部署自定义应用程序](deploy-custom-application.md)
    + [集成和使 [!DNL Experience Manager] 用inas a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)
 + [故障诊断](troubleshooting.md)
-+ [为开放源项目贡献](contribute-to-compute-service.md)
++ [为开源项目贡献内容](contribute-to-compute-service.md)
