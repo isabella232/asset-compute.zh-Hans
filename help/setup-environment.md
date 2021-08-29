@@ -2,9 +2,9 @@
 title: 设置 [!DNL Asset Compute Service]所需的开发环境
 description: 开发人员环境设置 [!DNL Asset Compute Service] 以开始创建和测试自定义代码。
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: eed9da4b20fe37a4e44ba270c197505b50cfe77f
+source-git-commit: 9404ffcc66a3b6ba206155d1b1a5c16a43e22a39
 workflow-type: tm+mt
-source-wordcount: '358'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ ht-degree: 0%
    * [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) (`aio`) — 使用安装 `npm install -g @adobe/aio-cli@7.1.0`。
 
 1. 确保满足[先决条件](/help/understand-extensibility.md#prerequisites-and-provisioning)。
+
+>[!NOTE]
+>
+>目前，请使用[!DNL Adobe I/O] CLI v7.1.0，而不要使用[!DNL Adobe I/O] CLI v8。
 
 ## 设置Firefly项目 {#create-firefly-project}
 
