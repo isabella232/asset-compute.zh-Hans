@@ -2,7 +2,7 @@
 title: ' [!DNL Asset Compute Service]的架构'
 description: 如何 [!DNL Asset Compute Service] API、应用程序和SDK协同工作来提供云原生资产处理服务。
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
-source-git-commit: 187a788d036f33b361a0fd1ca34a854daeb4a101
+source-git-commit: eed9da4b20fe37a4e44ba270c197505b50cfe77f
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 0%
@@ -40,7 +40,7 @@ ht-degree: 0%
 <!-- TBD:
 
 * About the YAML file?
-* See [https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application).
+* See [https://www.adobe.io/project-firefly/docs/getting_started/first_app/#5-anatomy-of-a-project-firefly-application](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#5-anatomy-of-a-project-firefly-application).
 
 * minimize description to custom applications
 * remove all internal stuff (e.g. Photoshop application, API Gateway) from text and diagram

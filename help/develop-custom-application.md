@@ -2,9 +2,9 @@
 title: 为 [!DNL Asset Compute Service]开发
 description: 使用 [!DNL Asset Compute Service]创建自定义应用程序。
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: 187a788d036f33b361a0fd1ca34a854daeb4a101
+source-git-commit: eed9da4b20fe37a4e44ba270c197505b50cfe77f
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1605'
 ht-degree: 0%
 
 ---
@@ -17,15 +17,15 @@ ht-degree: 0%
 * 安装所需的[软件工具](/help/setup-environment.md#create-dev-environment)。
 * 请参阅[设置环境](setup-environment.md)以确保您已准备好创建自定义应用程序。
 
-## 创建自定义应用程序{#create-custom-application}
+## 创建自定义应用程序 {#create-custom-application}
 
 确保在本地安装[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli)。
 
-1. 要创建自定义应用程序，请[创建Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#4-bootstrapping-new-app-using-the-cli)。 为此，请在终端中执行`aio app init <app-name>`。
+1. 要创建自定义应用程序，请[创建Firefly应用程序](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli)。 为此，请在终端中执行`aio app init <app-name>`。
 
-   如果您尚未登录，此命令将提示浏览器要求您使用Adobe ID登录到[Adobe开发人员控制台](https://console.adobe.io/)。 有关从cli登录的详细信息，请参阅[此处](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#3-signing-in-from-cli)。
+   如果您尚未登录，此命令将提示浏览器要求您使用Adobe ID登录到[Adobe开发人员控制台](https://console.adobe.io/)。 有关从cli登录的详细信息，请参阅[此处](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#3-signing-in-from-cli)。
 
-   Adobe建议您登录。 如果您遇到问题，请按照说明[创建应用程序，而无需登录](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)。
+   Adobe建议您登录。 如果您遇到问题，请按照说明[创建应用程序，而无需登录](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)。
 
 1. 登录后，按照CLI中的提示操作，选择`Organization`、`Project`和`Workspace`以用于应用程序。 选择在[设置环境](setup-environment.md)时创建的项目和工作区。
 
@@ -60,13 +60,13 @@ ht-degree: 0%
 
 1. 按照其余提示操作，在Visual Studio代码（或您喜爱的代码编辑器）中打开新应用程序。 它包含自定义应用程序的基架和示例代码。
 
-   请在此处阅读有关Firefly应用程序](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#5-anatomy-of-a-project-firefly-application)的[主要组件。
+   请在此处阅读有关Firefly应用程序](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#5-anatomy-of-a-project-firefly-application)的[主要组件。
 
    模板应用程序利用我们的[Asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk)来上传、下载和编排应用程序演绎版，因此开发人员只需实施自定义应用程序逻辑。 在`actions/<worker-name>`文件夹内， `index.js`文件是添加自定义应用程序代码的位置。
 
 有关自定义应用程序的示例和想法，请参阅[示例自定义应用程序](#try-sample)。
 
-### 添加凭据{#add-credentials}
+### 添加凭据 {#add-credentials}
 
 当您在创建应用程序时登录时，大多数Firefly凭据都会在您的ENV文件中收集。 但是，使用开发人员工具需要其他凭据。
 
@@ -75,7 +75,7 @@ Manual set up of credentials is removed from troubleshooting and best practices 
 If you did not log in, refer to our troubleshooting guide to [set up credentials manually](troubleshooting.md).
 -->
 
-#### 开发人员工具存储凭据{#developer-tool-credentials}
+#### 开发人员工具存储凭据 {#developer-tool-credentials}
 
 使用实际的[!DNL Asset Compute service]测试自定义应用程序的开发人员工具需要一个云存储容器，用于托管测试文件以及接收和显示应用程序生成的演绎版。
 
@@ -85,7 +85,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 确保有权访问[支持的云存储容器](https://github.com/adobe/asset-compute-devtool#prerequisites)。 此容器可由多个开发人员根据需要跨不同项目共享。
 
-#### 将凭据添加到ENV文件{#add-credentials-env-file}
+#### 将凭据添加到ENV文件 {#add-credentials-env-file}
 
 将开发人员工具的以下凭据添加到Firefly项目根目录的ENV文件：
 
@@ -98,7 +98,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 1. 从Adobe开发人员控制台下载文件。 转到项目的根目录，然后单击右上角的“Download All”（全部下载）。 下载的文件文件名为`<namespace>-<workspace>.json`。 执行下列操作之一：
 
    * 将文件重命名为`console.json`，并将其移到项目的根中。
-   * 或者，您也可以选择将绝对路径添加到Adobe开发人员控制台集成JSON文件。 这与在项目工作区中下载的[`console.json`](https://github.com/AdobeDocs/project-firefly/blob/master/getting_started/first_app.md#42-developer-is-not-logged-in-as-enterprise-organization-user)文件相同。
+   * 或者，您也可以选择将绝对路径添加到Adobe开发人员控制台集成JSON文件。 这与在项目工作区中下载的[`console.json`](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user)文件相同。
 
       ```conf
       ASSET_COMPUTE_INTEGRATION_FILE_PATH=
@@ -123,7 +123,7 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 >
 >`config.json`文件包含凭据。 从项目中，将JSON文件添加到`.gitignore`文件中，以阻止共享该文件。 这同样适用于.env和.aio文件。
 
-## 执行应用程序{#run-custom-application}
+## 执行应用程序 {#run-custom-application}
 
 在使用Asset compute开发人员工具执行应用程序之前，请正确配置[凭据](#developer-tool-credentials)。
 
@@ -144,14 +144,14 @@ If you did not log in, refer to our troubleshooting guide to [set up credentials
 
 请参阅[此处](test-custom-application.md)如何测试和调试应用程序。 完成自定义应用程序的开发后，[部署自定义应用程序](deploy-custom-application.md)。
 
-## 尝试Adobe{#try-sample}提供的示例应用程序
+## 尝试由Adobe提供的示例应用程序 {#try-sample}
 
 以下是示例自定义应用程序：
 
 * [工作人员 — 基本](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic)
 * [工人 — 动物 — 图片](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-animal-pictures)
 
-### 模板自定义应用程序{#template-custom-application}
+### 模板自定义应用程序 {#template-custom-application}
 
 [worker-basic](https://github.com/adobe/asset-compute-example-workers/tree/master/projects/worker-basic)是模板应用程序。 它只需复制源文件即可生成演绎版。 此应用程序的内容是在创建aio应用程序时选择`Adobe Asset Compute`时收到的模板。
 
@@ -191,7 +191,7 @@ exports.main = worker(async function (source, rendition) {
 >For extra authorization for these API calls, see [custom authorization checks](#custom-authorization-checks).
 -->
 
-### 传递自定义参数{#pass-custom-parameters}
+### 传递自定义参数 {#pass-custom-parameters}
 
 您可以通过演绎版对象传递自定义参数。 可以在[`rendition`说明](https://github.com/adobe/asset-compute-sdk#rendition)的应用程序内引用这些参数。 呈现版本对象的示例如下：
 
@@ -218,7 +218,7 @@ exports.main = worker(async function (source, rendition) {
 
 `example-worker-animal-pictures`传递一个自定义参数[`animal`](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/worker-animal-pictures.js#L39)，以确定要从Wiki媒体获取的文件。
 
-## 身份验证和授权支持{#authentication-authorization-support}
+## 身份验证和授权支持 {#authentication-authorization-support}
 
 默认情况下，Asset compute自定义应用程序附带Firefly应用程序的授权和身份验证检查。 可通过在`manifest.yml`中将`require-adobe-auth`注释设置为`true`来启用此功能。
 
@@ -235,7 +235,7 @@ const clientId = params.auth.clientId; // Technical Account client Id
 const orgId = params.auth.orgId; // Experience Cloud Organization
 ```
 
-### 传递第三方系统{#pass-credentials-for-tp}的凭据
+### 传递第三方系统的凭据 {#pass-credentials-for-tp}
 
 要处理其他外部服务的凭据，请在操作中将这些作为默认参数传递。 在传输中会自动加密这些数据。 有关更多信息，请参阅运行时开发人员指南](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/creating_actions.md)中的[创建操作。 然后，在部署期间使用环境变量进行设置。 可以在操作内的`params`对象中访问这些参数。
 
@@ -270,7 +270,7 @@ SECRET_KEY=secret-value
 const key = params.secretKey;
 ```
 
-## 调整应用程序大小{#sizing-workers}
+## 调整应用程序大小 {#sizing-workers}
 
 应用程序在[!DNL Adobe I/O]运行时的容器中执行，并且[limits](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/guides/system_settings.md)可通过`manifest.yml`进行配置：
 
