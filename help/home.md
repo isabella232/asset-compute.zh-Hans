@@ -2,9 +2,9 @@
 title: '[!DNL Adobe Asset Compute Service] 用户指南'
 description: 本文档介绍 [!DNL Asset Compute Service] 的任务，例如简介、如何开发、管理、部署自定义代码，以及对其进行故障诊断。
 exl-id: 5acf87d1-a391-4802-bfce-e367fc8564df
-source-git-commit: 187a788d036f33b361a0fd1ca34a854daeb4a101
+source-git-commit: a2460a0719f8c585ed72e44c904aa0df33301032
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '175'
 ht-degree: 1%
 
 ---
@@ -15,9 +15,7 @@ ht-degree: 1%
 
 本文档涵盖[!DNL Asset Compute Service]主题，例如如何开发、管理、部署自定义代码，以及对其进行故障诊断。 要了解[!DNL Asset Compute Service]产品是什么，请参阅此[简介](introduction.md)。 请查看[该服务可以为您](introduction.md#possible-use-cases-benefits)执行哪些操作。
 
-[!DNL Asset Compute Service] 支持多种文件格式的转换，并与多种Adobe服务集成。请参阅[支持的文件格式和服务集成](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)的列表。
-
-有关版本相关信息以及最新版本，请参阅[发行说明](/help/release-notes.md)。
+[!DNL Asset Compute Service] 支持多种文件格式的转换，并与许多Adobe服务集成。请参阅[支持的文件格式和服务集成](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)的列表。
 
 请参阅 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)中提供的[资产微服务功能以及如何在[!DNL Experience Manager]中使用微服务的概述。
 

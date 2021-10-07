@@ -7,10 +7,10 @@ role: Developer
 user-guide-title: asset compute服务指南
 user-guide-description: 本文档涵盖 [!DNL Asset Compute Service] 任务，例如如何开发、管理、部署自定义代码，以及对其进行故障诊断。
 breadcrumb-title: asset compute服务指南
-source-git-commit: c4f224a2ee99e78018a7a3f43ec59907f05ea4ef
+source-git-commit: a2460a0719f8c585ed72e44c904aa0df33301032
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '96'
+ht-degree: 6%
 
 ---
 
@@ -19,7 +19,6 @@ ht-degree: 0%
 
 + [asset compute服务用户指南](home.md)
 + [概述](introduction.md)
-+ [发行说明](release-notes.md)
 + [支持的文件格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)
 + [架构](architecture.md)
 + [API参考](api.md)

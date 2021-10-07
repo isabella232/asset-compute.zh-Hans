@@ -2,9 +2,9 @@
 title: ' [!DNL Asset Compute Service]简介'
 description: '[!DNL Asset Compute Service] 是一项云原生资产处理服务，可降低复杂性并提高可扩展性。'
 exl-id: f8c89f65-5a94-44f3-aaac-4612ae291101
-source-git-commit: 187a788d036f33b361a0fd1ca34a854daeb4a101
+source-git-commit: a2460a0719f8c585ed72e44c904aa0df33301032
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 >
 >目前，[!DNL Asset Compute Service]只能通过[!DNL Experience Manager]作为[!DNL Cloud Service]使用。 管理员可创建处理配置文件，以调用[!DNL Asset Compute Service]来传递要处理的资产。 请参阅[使用资产微服务和处理配置文件](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)。
 
-## 支持的[!DNL Asset Compute Service] {#possible-use-cases-benefits}用例
+## 支持的[!DNL Asset Compute Service]用例 {#possible-use-cases-benefits}
 
 [!DNL Asset Compute Service] 支持一些常见的业务用例，如基本图像处理；Adobe应用程序特定转化；和自定义应用程序创建，以编排复杂的业务要求。
 
@@ -47,7 +47,6 @@ ht-degree: 0%
 >* [资产微服务资产处理 [!DNL Adobe Experience Manager] 概述a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)。
 >* [项目Firefly的文档](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)。
 >* [支持处理的文件格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html)。
->* [asset compute服务的发行说明](release-notes.md)
 
 
 <!-- **TBD:**
