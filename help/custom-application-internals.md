@@ -2,9 +2,9 @@
 title: 了解自定义应用程序的工作情况
 description: 内部工作 [!DNL Asset Compute Service] 自定义应用程序，以帮助了解其工作方式。
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: 07e87c57e57f18f4d6e34ca8529d5598b0b12f3d
+source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ curl -X POST \
 }
 ```
 
-的 [!DNL Asset Compute Service] 将自定义应用程序呈现请求发送到自定义应用程序。 它对提供的应用程序URL使用HTTPPOST，该URL是Project App Builder中的安全Web操作URL。 所有请求都使用HTTPS协议来最大限度地提高数据安全性。
+的 [!DNL Asset Compute Service] 将自定义应用程序呈现请求发送到自定义应用程序。 它对提供的应用程序URL使用HTTPPOST，该URL是App Builder中的安全Web操作URL。 所有请求都使用HTTPS协议来最大限度地提高数据安全性。
 
 的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 自定义应用程序使用来处理HTTPPOST请求。 它还可处理源的下载、上传演绎版、发送 [!DNL Adobe I/O] 事件和错误处理。
 

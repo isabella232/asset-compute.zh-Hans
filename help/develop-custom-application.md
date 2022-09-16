@@ -2,7 +2,7 @@
 title: 开发对象 [!DNL Asset Compute Service]
 description: 使用创建自定义应用程序 [!DNL Asset Compute Service].
 exl-id: a0c59752-564b-4bb6-9833-ab7c58a7f38e
-source-git-commit: a50a3bdb520cbe608c5710716df80ac6e3b486e5
+source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
 workflow-type: tm+mt
 source-wordcount: '1618'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 确保 [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) 本地安装。
 
-1. 要创建自定义应用程序，请 [创建应用程序生成器项目](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 为此，请执行 `aio app init <app-name>` 在你的终端上。
+1. 要创建自定义应用程序，请 [创建应用程序生成器项目](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#4-bootstrapping-new-app-using-the-cli). 为此，请执行 `aio app init <app-name>` 在你的终端上。
 
-   如果您尚未登录，此命令将提示浏览器要求您登录 [Adobe Developer控制台](https://console.adobe.io/) 你的Adobe ID。 请参阅 [此处](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#3-signing-in-from-cli) 有关从cli登录的详细信息。
+   如果您尚未登录，此命令将提示浏览器要求您登录 [Adobe Developer控制台](https://console.adobe.io/) 你的Adobe ID。 请参阅 [此处](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli) 有关从cli登录的详细信息。
 
-   Adobe建议您登录。 如果您遇到问题，请按照说明操作 [创建应用程序而不登录](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user).
+   Adobe建议您登录。 如果您遇到问题，请按照说明操作 [创建应用程序而不登录](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#42-developer-is-not-logged-in-as-enterprise-organization-user).
 
 1. 登录后，按照CLI中的提示操作，并选择 `Organization`, `Project`和 `Workspace` 用于应用程序。 选择您在 [设置环境](setup-environment.md). 提示时 `Which extension point(s) do you wish to implement ?`，请确保选择 `DX Asset Compute Worker`:
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 1. 按照其余提示操作，在Visual Studio代码（或您喜爱的代码编辑器）中打开新应用程序。 它包含自定义应用程序的基架和示例代码。
 
-   请在此处阅读 [App Builder应用程序的主要组件](https://www.adobe.io/project-firefly/docs/getting_started/first_app/#5-anatomy-of-a-project-firefly-application).
+   请在此处阅读 [App Builder应用程序的主要组件](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#5-anatomy-of-an-app-builder-application).
 
    模板应用程序利用我们的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#asset-compute-sdk) 用于上传、下载和编排应用程序演绎版，因此开发人员只需实施自定义应用程序逻辑。 内部 `actions/<worker-name>` 文件夹， `index.js` 文件是添加自定义应用程序代码的位置。
 
