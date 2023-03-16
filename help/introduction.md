@@ -2,9 +2,9 @@
 title: 简介 [!DNL Asset Compute Service]
 description: '"[!DNL Asset Compute Service] 是一项云原生资产处理服务，可降低复杂性并提高可扩展性。”'
 exl-id: f8c89f65-5a94-44f3-aaac-4612ae291101
-source-git-commit: 93d3b407c8875888f03bec673d0a677a3205cfbb
+source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '309'
 ht-degree: 6%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 6%
 
 [!DNL Asset Compute Service] 是的 [!DNL Adobe Experience Cloud] 处理数字资产。 它可以将图像、视频、文档和其他文件格式转换为不同的演绎版，包括缩略图、提取的文本和元数据，以及存档。
 
-开发人员可以插件自定义资产应用程序（也称为自定义工作程序），以解决自定义用例。 服务在 [!DNL Adobe I/O] 运行时。 它可以通过 [!DNL Project Firefly] 使用Node.js编写的无头应用程序。 这些API可以执行自定义操作，例如调用外部API来执行图像操作或利用 [!DNL Adobe Sensei] 支持。
+开发人员可以插件自定义资产应用程序（也称为自定义工作程序），以解决自定义用例。 服务在 [!DNL Adobe I/O] 运行时。 它可以通过 [!DNL Adobe Developer App Builder] 使用Node.js编写的无头应用程序。 这些API可以执行自定义操作，例如调用外部API来执行图像操作或利用 [!DNL Adobe Sensei] 支持。
 
-[!DNL Project Firefly] 是在 [!DNL Adobe I/O] 运行时扩展Adobe Experience Cloud解决方案。 要创建自定义应用程序，开发人员可以利用 [!DNL React Spectrum] (Adobe的UI工具包)、创建微服务、创建自定义事件和编排API。 请参阅 [Firefly项目文档](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html).
+[!DNL Adobe Developer App Builder] 是在 [!DNL Adobe I/O] 运行时扩展Adobe Experience Cloud解决方案。 要创建自定义应用程序，开发人员可以利用 [!DNL React Spectrum] (Adobe的UI工具包)、创建微服务、创建自定义事件和编排API。 请参阅 [Adobe Developer App Builder文档](https://developer.adobe.com/app-builder/docs/overview/).
 
 >[!NOTE]
 >
@@ -45,7 +45,7 @@ ht-degree: 6%
 >[!MORELIKETHIS]
 >
 >* [资产微服务在 [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html).
->* [Firefly项目文档](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html).
+>* [Adobe Developer App Builder文档](https://developer.adobe.com/app-builder/docs/overview).
 >* [支持处理的文件格式](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/file-format-support.html).
 
 

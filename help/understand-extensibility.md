@@ -1,34 +1,34 @@
 ---
-title: 了解有关扩展的 [!DNL Asset Compute Service]
-description: 何时以及如何扩展 [!DNL Asset Compute Service] 功能以进行自定义资产处理。
+title: 了解扩展 [!DNL Asset Compute Service]
+description: 何时以及如何扩展 [!DNL Asset Compute Service] 功能进行自定义资产处理。
 exl-id: 3b903364-34cc-44d5-9a03-24a0102cf85d
-source-git-commit: eed9da4b20fe37a4e44ba270c197505b50cfe77f
+source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
-source-wordcount: '254'
-ht-degree: 0%
+source-wordcount: '260'
+ht-degree: 5%
 
 ---
 
 # 扩展性简介 {#introduction-to-extensibilty}
 
-许多再现要求（如转换为格式和调整图像大小）都由 [!DNL Experience Manager] 中的“处理配置文件”作为 [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html)来处理。 [更复杂的业务需求可能需要定制的解决方案，以满足组织的需求。 [!DNL Asset Compute Service] 可以通过创建从中的处理配置文件调用的自定义应用程序进行 [!DNL Experience Manager]扩展。这些自定义应用程序符合[支持的用例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html)的要求。
+许多再现要求（如转换为格式和调整图像大小）都由 [处理中的用户档案 [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/asset-microservices-overview.html). 更复杂的业务需求可能需要定制的解决方案，以满足组织的需求。 [!DNL Asset Compute Service] 可以通过创建从中的处理配置文件调用的自定义应用程序进行扩展 [!DNL Experience Manager]. 这些自定义应用程序 [支持的用例](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/assets/manage/asset-microservices-configure-and-use.html).
 
 >[!NOTE]
 >
->[!DNL Asset Compute Service] 只能与as a一 [!DNL Experience Manager] 起使 [!DNL Cloud Service]用
+>[!DNL Asset Compute Service] 仅可用于 [!DNL Experience Manager] as a [!DNL Cloud Service].
 
-自定义应用程序是无标题的[项目Firefly](https://github.com/AdobeDocs/project-firefly)应用程序。 通过[Asset computeSDK](https://github.com/adobe/asset-compute-sdk)和项目Firefly开发人员工具，可以使用自定义应用程序扩展[!DNL Asset Compute Service]变得简单。 这允许开发人员专注于业务逻辑。 创建自定义应用程序与创建无服务器的纯运行时操作一样简单。 [!DNL Adobe I/O]它是一个Node.js JavaScript函数。 [基本自定义应用程序示例](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js)说明了该示例。
+自定义应用程序是无头的 [Adobe Developer App Builder](https://github.com/AdobeDocs/app-builder) 应用程序。 扩展 [!DNL Asset Compute Service] 通过使自定义应用程序变得简单 [asset computeSDK](https://github.com/adobe/asset-compute-sdk) 和Adobe Developer App Builder开发人员工具。 这允许开发人员专注于业务逻辑。 创建自定义应用程序与创建无服务器的普通应用程序一样简单 [!DNL Adobe I/O] 运行时操作。 它是一个Node.js JavaScript函数。 的 [基本自定义应用程序示例](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) 说明。
 
 ## 先决条件和配置要求 {#prerequisites-and-provisioning}
 
 确保满足以下先决条件：
 
-* 项目Firefly工具安装在您的计算机上。
-* [!DNL Experience Cloud]组织。 更多信息[此处](https://www.adobe.io/project-firefly/docs/getting_started/#acquire-access-and-credentials)。
-* 体验组织必须启用[!DNL Experience Manager]作为[!DNL Cloud Service]。
-* [!DNL Adobe Experience Cloud] 组织是开发人员预 [!DNL Project Firefly] 览计划的一部分。请参阅[如何应用访问](https://www.adobe.io/project-firefly/docs/overview/getting_access/)。
+* Adobe Developer App Builder工具已安装在您的计算机上。
+* 安 [!DNL Experience Cloud] 组织。 更多信息 [此处](https://developer.adobe.com/app-builder/docs/getting_started/#acquire-access-and-credentials).
+* 体验组织必须具有 [!DNL Experience Manager] as a [!DNL Cloud Service] 已启用。
+* [!DNL Adobe Experience Cloud] 组织是 [!DNL Adobe Developer App Builder] 开发人员预览计划。 请参阅 [如何申请访问](https://developer.adobe.com/app-builder/docs/overview/getting_access).
 * 确保开发人员在组织中具有开发人员角色或管理员权限。
-* 确保本地安装了[[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli)。
+* 确保 [[!DNL Adobe I/O] CLI](https://github.com/adobe/aio-cli) 本地安装。
 
 <!-- TBD for later:
 
