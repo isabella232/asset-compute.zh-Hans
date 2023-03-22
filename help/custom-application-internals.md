@@ -2,7 +2,7 @@
 title: 了解自定义应用程序的工作情况
 description: 内部工作 [!DNL Asset Compute Service] 自定义应用程序，以帮助了解其工作方式。
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: a121b48d480b45405259c2061ac86b9ab46b89cb
+source-git-commit: 2af710443cdc2e5e25e105eca6e779eb58631ae9
 workflow-type: tm+mt
 source-wordcount: '751'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 通过下图，可了解当客户使用自定义应用程序处理数字资产时的端对端工作流程。
 
-![自定义应用程序工作流](assets/customworker.png)
+![自定义应用程序工作流](assets/customworker.svg)
 
 *图：使用处理资产时涉及的步骤 [!DNL Asset Compute Service].*
 
