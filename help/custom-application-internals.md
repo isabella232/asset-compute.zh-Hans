@@ -1,6 +1,6 @@
 ---
-title: 了解自定义应用程序的工作情况
-description: 内部工作 [!DNL Asset Compute Service] 自定义应用程序，以帮助了解其工作方式。
+title: 瞭解自訂應用程式的運作方式
+description: 內部工作 [!DNL Asset Compute Service] 自訂應用程式，以協助瞭解其運作方式。
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
 source-git-commit: 2af710443cdc2e5e25e105eca6e779eb58631ae9
 workflow-type: tm+mt
@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# 自定义应用程序的内部 {#how-custom-application-works}
+# 自訂應用程式的內部結構 {#how-custom-application-works}
 
-通过下图，可了解当客户使用自定义应用程序处理数字资产时的端对端工作流程。
+使用下圖來瞭解當使用者端使用自訂應用程式處理數位資產時的端對端工作流程。
 
-![自定义应用程序工作流](assets/customworker.svg)
+![自訂應用程式工作流程](assets/customworker.svg)
 
-*图：使用处理资产时涉及的步骤 [!DNL Asset Compute Service].*
+*圖：處理資產的相關步驟，使用 [!DNL Asset Compute Service].*
 
 ## 注册 {#registration}
 
-客户端必须调用 [`/register`](api.md#register) 在 [`/process`](api.md#process-request) 以设置并检索用于接收的日记帐URL [!DNL Adobe I/O] 事件用于AdobeAsset compute。
+使用者端必須呼叫 [`/register`](api.md#register) 在第一次向提出請求之前一次 [`/process`](api.md#process-request) 以設定和擷取分錄URL進行接收 [!DNL Adobe I/O] AdobeAsset compute事件。
 
 ```sh
 curl -X POST \
@@ -30,11 +30,11 @@ curl -X POST \
   -H "x-api-key: $API_KEY"
 ```
 
-的 [`@adobe/asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) JavaScript库可在NodeJS应用程序中使用，以处理从注册、处理到异步事件处理等所有必需步骤。 有关所需标头的更多信息，请参阅 [身份验证和授权](api.md).
+此 [`@adobe/asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) JavaScript程式庫可用於NodeJS應用程式，以處理從註冊、處理到非同步事件處理的所有必要步驟。 如需必要標題的詳細資訊，請參閱 [驗證與授權](api.md).
 
 ## 正在处理 {#processing}
 
-客户端发送 [处理](api.md#process-request) 请求。
+使用者端傳送 [處理](api.md#process-request) 要求。
 
 ```sh
 curl -X POST \
@@ -46,11 +46,11 @@ curl -X POST \
   -d "<RENDITION_JSON>
 ```
 
-客户端负责使用预签名URL正确设置演绎版的格式。 的 [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript库可在NodeJS应用程序中用于预签URL。 目前，库仅支持Azure Blob Storage和AWS S3容器。
+使用者端負責使用預先簽署的URL正確格式化轉譯。 此 [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) JavaScript程式庫可用於NodeJS應用程式，以預先簽署URL。 目前程式庫僅支援Azure Blob儲存體和AWS S3容器。
 
-处理请求会返回 `requestId` 可用于轮询 [!DNL Adobe I/O] 事件。
+處理要求傳回 `requestId` 可用於輪詢的 [!DNL Adobe I/O] 事件。
 
-下面是自定义应用程序处理请求的示例。
+以下為範例自訂應用程式處理請求。
 
 ```json
 {
@@ -68,15 +68,15 @@ curl -X POST \
 }
 ```
 
-的 [!DNL Asset Compute Service] 将自定义应用程序呈现请求发送到自定义应用程序。 它对提供的应用程序URL使用HTTPPOST，该URL是App Builder中的安全Web操作URL。 所有请求都使用HTTPS协议来最大限度地提高数据安全性。
+此 [!DNL Asset Compute Service] 傳送自訂應用程式轉譯請求給自訂應用程式。 它會使用HTTPPOST來連線提供的應用程式URL，這是來自App Builder的安全網路動作URL。 所有要求都使用HTTPS通訊協定，以最大化資料安全性。
 
-的 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 自定义应用程序使用来处理HTTPPOST请求。 它还可处理源的下载、上传演绎版、发送 [!DNL Adobe I/O] 事件和错误处理。
+此 [ASSET COMPUTESDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 由自訂應用程式使用，處理HTTPPOST請求。 它也會處理來源下載、上傳轉譯、傳送 [!DNL Adobe I/O] 事件和錯誤處理。
 
 <!-- TBD: Add the application diagram. -->
 
-### 应用程序代码 {#application-code}
+### 應用程式程式碼 {#application-code}
 
-自定义代码只需提供一个回调，以获取本地可用的源文件(`source.path`)。 的 `rendition.path` 是放置资产处理请求最终结果的位置。 自定义应用程序使用回调将本地可用的源文件转换为使用传递的名称(`rendition.path`)。 自定义应用程序必须写入 `rendition.path` 要创建演绎版，请执行以下操作：
+自訂程式碼只需提供回呼，接受本機可用的來源檔案(`source.path`)。 此 `rendition.path` 是放置資產處理請求最終結果的位置。 自訂應用程式會使用回呼，使用傳入的名稱將本機可用的來源檔案轉換為轉譯檔案(`rendition.path`)。 自訂應用程式必須寫入 `rendition.path` 若要建立轉譯：
 
 ```javascript
 const { worker } = require('@adobe/asset-compute-sdk');
@@ -94,35 +94,35 @@ exports.main = worker(async (source, rendition) => {
 });
 ```
 
-### 下载源文件 {#download-source}
+### 下載來源檔案 {#download-source}
 
-自定义应用程序仅处理本地文件。 下载源文件由 [asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk).
+自訂應用程式只會處理本機檔案。 下載來源檔案的處理方式 [ASSET COMPUTESDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk).
 
-### 演绎版创建 {#rendition-creation}
+### 建立轉譯 {#rendition-creation}
 
-SDK将调用异步 [演绎版回调函数](https://github.com/adobe/asset-compute-sdk#rendition-callback-for-worker-required) 每个演绎版。
+SDK會以非同步方式呼叫 [轉譯回呼函式](https://github.com/adobe/asset-compute-sdk#rendition-callback-for-worker-required) 每個轉譯。
 
-回调函数有权访问 [来源](https://github.com/adobe/asset-compute-sdk#source) 和 [演绎版](https://github.com/adobe/asset-compute-sdk#rendition) 对象。 的 `source.path` 已存在，是源文件的本地副本的路径。 的 `rendition.path` 是必须存储已处理的演绎版的路径。 除非 [disableSourceDownload标记](https://github.com/adobe/asset-compute-sdk#worker-options-optional) 设置，则应用程序必须完全使用 `rendition.path`. 否则，SDK无法找到或识别呈现版本文件，并且失败。
+回呼函式可以存取 [source](https://github.com/adobe/asset-compute-sdk#source) 和 [轉譯](https://github.com/adobe/asset-compute-sdk#rendition) 物件。 此 `source.path` 已存在，且是來源檔案的本機副本路徑。 此 `rendition.path` 是必須儲存已處理轉譯的路徑。 除非 [disableSourceDownload旗標](https://github.com/adobe/asset-compute-sdk#worker-options-optional) 設定，應用程式必須完全使用 `rendition.path`. 否則，SDK將無法找到或識別轉譯檔案，並會失敗。
 
-该示例的过度简化是为了说明和重点介绍自定义应用程序的结构。 应用程序只会将源文件复制到演绎版目标。
+範例的過度簡化是為了說明和專注於自訂應用程式的剖析。 應用程式只會將來源檔案複製到轉譯目的地。
 
-有关演绎版回调参数的更多信息，请参阅 [asset computeSDK API](https://github.com/adobe/asset-compute-sdk#api-details).
+如需有關轉譯回呼引數的詳細資訊，請參閱 [ASSET COMPUTE SDK API](https://github.com/adobe/asset-compute-sdk#api-details).
 
-### 上传演绎版 {#upload-rendition}
+### 上傳轉譯 {#upload-rendition}
 
-在创建每个演绎版并将其存储在文件中后，该文件的路径为 `rendition.path`, [asset computeSDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 将每个呈现版本上传到云存储(AWS或Azure)。 当且仅当传入请求具有指向同一应用程序URL的多个演绎版时，自定义应用程序才会同时获取多个演绎版。 将上传到云存储的操作在每个演绎版之后，并在为下一个演绎版运行回调之前完成。
+建立每個轉譯並儲存在檔案後，其路徑由 `rendition.path`，則 [ASSET COMPUTESDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) 將每個轉譯上傳至雲端儲存空間(AWS或Azure)。 若且唯若傳入請求具有多個指向相同應用程式URL的轉譯時，自訂應用程式會同時取得多個轉譯。 上傳至雲端儲存空間會在每個轉譯之後以及執行下一個轉譯的回呼之前完成。
 
-的 `batchWorker()` 有不同的行为，因为它实际上会处理所有演绎版，并且仅在所有演绎版都经过处理后才上传这些演绎版。
+此 `batchWorker()` 有不同的行為，因為它實際上會處理所有轉譯，而且只會在所有轉譯都處理完成之後才會上傳這些轉譯。
 
 ## [!DNL Adobe I/O] 事件 {#aio-events}
 
-SDK会发送 [!DNL Adobe I/O] 每个演绎版的事件。 这些事件为 `rendition_created` 或 `rendition_failed` 取决于结果。 请参阅 [asset compute异步事件](api.md#asynchronous-events) 以了解事件详细信息。
+SDK會傳送 [!DNL Adobe I/O] 每個轉譯的事件。 這些事件為其中一種型別 `rendition_created` 或 `rendition_failed` 視結果而定。 另請參閱 [asset compute非同步事件](api.md#asynchronous-events) 以取得事件詳細資訊。
 
 ## 接收 [!DNL Adobe I/O] 事件 {#receive-aio-events}
 
-客户端轮询 [[!DNL Adobe I/O] 事件日记帐](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#/Journaling) 根据消费逻辑。 初始日志URL是 `/register` API响应。 事件可使用 `requestId` 事件中存在且与 `/process`. 每个演绎版都有一个单独的事件，该事件会在上传演绎版后立即发送（或失败）。 当客户端收到匹配事件后，便可以显示或以其他方式处理生成的演绎版。
+使用者端輪詢 [[!DNL Adobe I/O] 事件日誌](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#/Journaling) 根據其消耗邏輯。 初始日誌URL是提供的日誌URL `/register` API回應。 事件可透過以下方式識別： `requestId` 會顯示在事件中，且與中傳回的值相同。 `/process`. 每個轉譯都有個別事件，會在轉譯上傳（或失敗）後立即傳送。 使用者端收到相符事件後，即可顯示或處理產生的轉譯。
 
-JavaScript库 [`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) 使用 `waitActivation()` 方法来获取所有事件。
+JavaScript資料庫 [`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) 使用讓日誌輪詢更簡單 `waitActivation()` 方法以取得所有事件。
 
 ```javascript
 const events = await assetCompute.waitActivation(requestId);
@@ -140,7 +140,7 @@ await Promise.all(events.map(event => {
 }));
 ```
 
-有关如何获取日志事件的详细信息，请参阅 [[!DNL Adobe I/O] 事件API](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#!adobedocs/adobeio-events/master/events-api-reference.yaml).
+如需有關如何取得日誌事件的詳細資訊，請參閱 [[!DNL Adobe I/O] 事件API](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#!adobedocs/adobeio-events/master/events-api-reference.yaml).
 
 <!-- TBD:
 * Illustration of the controls/data flow.
