@@ -1,6 +1,6 @@
 ---
 title: 疑难解答 [!DNL Asset Compute Service]
-description: 疑難排解和偵錯自訂應用程式，使用 [!DNL Asset Compute Service].
+description: 使用以下方式排除自定义应用程序故障并调试 [!DNL Asset Compute Service].
 exl-id: 017fff91-e5e9-4a30-babf-5faa1ebefc2f
 source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
@@ -11,37 +11,37 @@ ht-degree: 1%
 
 # 疑难解答 {#troubleshoot}
 
-可協助您針對Asset compute服務進行疑難排解的一些一般疑難排解提示如下：
+以下是一般故障排除提示，可帮助您排除Asset compute服务故障：
 
-* 請確定JavaScript應用程式在啟動時不會當機。 這類當機通常與缺少程式庫或相依性有關。
-* 請確定應用程式的所有要安裝的相依性都被引用 `package.json` 檔案。
-* 確保任何因清理失敗而導致的錯誤不會產生隱藏原始問題的錯誤。
+* 确保JavaScript应用程序在启动时不会崩溃。 此类崩溃通常与缺少库或依赖项有关。
+* 确保要安装的所有依赖项在应用程序的 `package.json` 文件。
+* 确保任何可能因失败时清理而导致的错误不会生成隐藏原始问题的自身错误。
 
-* 第一次使用新工具啟動開發人員工具時 [!DNL Asset Compute Service] 整合時，如果Asset compute事件日誌未完全設定，則第一個處理請求可能會失敗。 請等候一段時間以設定日誌，然後再傳送另一個請求。
-* 如果您在傳送Asset compute時遇到錯誤 `/register` 或 `/process` 請求，確定所有必要的API都已新增至 [!DNL Adobe I/O] 專案和工作區 — 亦即Asset compute、 [!DNL Adobe I/O] 活動， [!DNL Adobe I/O] 事件管理，以及 [!DNL Adobe I/O] 執行階段。
+* 首次使用新启动开发人员工具时 [!DNL Asset Compute Service] 集成，如果未完全设置Asset compute事件日志，则可能会使第一个处理请求失败。 请等待一段时间以设置日志，然后再发送另一个请求。
+* 如果您在发送Asset compute时遇到错误 `/register` 或 `/process` 请求时，确保所有必需的API都已添加到 [!DNL Adobe I/O] 项目和工作区 — 即Asset compute， [!DNL Adobe I/O] 活动， [!DNL Adobe I/O] 事件管理，以及 [!DNL Adobe I/O] 运行时。
 
-## 登入問題透過 [!DNL Adobe I/O] CLI {#login-via-aio-cli}
+## 通过以下方式登录问题 [!DNL Adobe I/O] CLI {#login-via-aio-cli}
 
-如果您無法登入 [!DNL Adobe Developer Console] [透過 [!DNL Adobe I/O] CLI](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)，然後手動新增開發、測試和部署自訂應用程式所需的認證：
+如果您在登录 [!DNL Adobe Developer Console] [通过 [!DNL Adobe I/O] CLI](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli)，然后手动添加开发、测试和部署自定义应用程序所需的凭据：
 
-1. 導覽至您的Adobe Developer App Builder專案和工作區，網址為 [Adobe Developer主控台](https://console.adobe.io/) 並按下 **[!UICONTROL 下載]** 從右上角。 開啟此檔案，並將此JSON儲存至您電腦上的安全位置。
+1. 在上导航到您的Adobe Developer App Builder项目和工作区。 [Adobe Developer控制台](https://console.adobe.io/) 并按 **[!UICONTROL 下载]** 从右上角。 打开此文件并将此JSON保存到计算机上的安全位置。
 
-1. 導覽至Adobe Developer App Builder應用程式中的ENV檔案。
+1. 导航到Adobe Developer App Builder应用程序中的环境文件。
 
-1. 新增 [!DNL Adobe I/O] 執行階段認證。 取得 [!DNL Adobe I/O] 下載的JSON中的執行階段認證。 認證位於 `project.workspace.services.runtime`. 新增 [!DNL Adobe I/O] 中的執行階段認證 `AIO_runtime_XXX` 變數：
+1. 添加 [!DNL Adobe I/O] 运行时凭据。 获取 [!DNL Adobe I/O] 下载的JSON中的运行时凭据。 凭据位于 `project.workspace.services.runtime`. 添加 [!DNL Adobe I/O] 中的运行时凭据 `AIO_runtime_XXX` 变量：
 
    ```json
    AIO_runtime_auth=
    AIO_runtime_namespace=
    ```
 
-1. 在步驟1中新增已下載JSON的絕對路徑：
+1. 在步骤1中添加已下载JSON的绝对路径：
 
    ```json
        ASSET_COMPUTE_INTEGRATION_FILE_PATH=
    ```
 
-1. 設定其餘的 [必要的認證](develop-custom-application.md) 開發人員工具所需。
+1. 设置其余的 [所需的凭据](develop-custom-application.md) 开发人员工具所需。
 
 <!-- TBD for later:
 Add any best practices for developers in this section:

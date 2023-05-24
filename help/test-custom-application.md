@@ -1,6 +1,6 @@
 ---
-title: 測試和偵錯 [!DNL Asset Compute Service] 自訂應用程式
-description: 測試和偵錯 [!DNL Asset Compute Service] 自訂應用程式。
+title: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序
+description: 测试和调试 [!DNL Asset Compute Service] 自定义应用程序。
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
 source-git-commit: 2dde177933477dc9ac2ff5a55af1fd2366e18359
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 測試並偵錯自訂應用程式 {#test-debug-custom-worker}
+# 测试和调试自定义应用程序 {#test-debug-custom-worker}
 
-## 執行自訂應用程式的單元測試 {#test-custom-worker}
+## 执行自定义应用程序的单元测试 {#test-custom-worker}
 
-安裝 [Docker案頭](https://www.docker.com/get-started) 在您的電腦上。 若要測試自訂背景工作，請在應用程式的根目錄執行下列命令：
+安装 [Docker桌面](https://www.docker.com/get-started) 在你的电脑上。 要测试自定义工作程序，请在应用程序的根目录下执行以下命令：
 
 ```bash
 $ aio app test
@@ -25,17 +25,17 @@ To run tests for a custom application, run `aio asset-compute test-worker` comma
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-這會執行自訂單元測試架構，以便在專案中執行Asset compute應用程式動作，如下所述。 它是透過中的設定連結的 `package.json` 檔案。 也可以有JavaScript單元測試，例如Jest。 `aio app test` 執行兩者。
+这将运行一个自定义单元测试框架，用于Asset compute项目中的应用程序操作，如下所述。 它通过 `package.json` 文件。 也可以使用JavaScript单元测试，例如Jest。 `aio app test` 执行这两者。
 
-此 [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) 外掛程式會內嵌為自訂應用程式中的開發相依性，因此不需要安裝在建置/測試系統上。
+此 [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) 插件作为开发依赖项嵌入在自定义应用程序应用程序中，因此无需将其安装在构建/测试系统中。
 
-### 應用程式單元測試架構 {#unit-test-framework}
+### 应用单元测试框架 {#unit-test-framework}
 
-asset compute應用程式單元測試架構可讓您在不編寫任何程式碼的情況下測試應用程式。 它仰賴應用程式轉譯檔案原則的來源。 必須設定特定檔案和資料夾結構，以使用測試來源檔案、選用引數、預期的轉譯和自訂驗證指令碼來定義測試案例。 依預設，會比較轉譯以取得位元組相等。 此外，您可使用簡單的JSON檔案輕鬆模擬外部HTTP服務。
+asset compute应用单元测试框架允许在不编写任何代码的情况下测试应用。 它依赖于源文件格式副本的应用原理。 必须设置特定的文件和文件夹结构，以使用测试源文件、可选参数、预期演绎版和自定义验证脚本来定义测试用例。 默认情况下，会比较格式副本以保持字节相等。 此外，可以使用简单的JSON文件轻松模拟外部HTTP服务。
 
-### 新增測試 {#add-tests}
+### 添加测试 {#add-tests}
 
-測試應在 `test` 的根層級資料夾 [!DNL Adobe I/O] 專案。 每個應用程式的測試案例應位於路徑中 `test/asset-compute/<worker-name>`，每個測試案例各有一個資料夾：
+测试应在 `test` 的根级别的文件夹 [!DNL Adobe I/O] 项目。 每个应用程序的测试用例应位于路径中 `test/asset-compute/<worker-name>`，每个测试用例具有一个文件夹：
 
 ```yaml
 action/
@@ -62,15 +62,15 @@ test/
             mock-console.adobe.io.json
 ```
 
-請檢視 [自訂應用程式範例](https://github.com/adobe/asset-compute-example-workers/) 以取得一些範例。 詳細參考如下。
+请查看 [自定义应用程序示例](https://github.com/adobe/asset-compute-example-workers/) 举一些例子。 详细参考如下。
 
-### 測試輸出 {#test-output}
+### 测试输出 {#test-output}
 
-包含自訂應用程式記錄的詳細測試輸出可在 `build` 位於Adobe Developer App Builder應用程式根目錄的資料夾，如 `aio app test` 輸出。
+包含自定义应用程序日志的详细测试输出可在 `build` 位于Adobe Developer App Builder应用程序根目录的文件夹，如所示 `aio app test` 输出。
 
-### 模擬外部服務 {#mock-external-services}
+### 模拟外部服务 {#mock-external-services}
 
-您可以定義以模擬動作中的外部服務呼叫 `mock-<HOST_NAME>.json` 檔案，其中HOST_NAME是您要模擬的主機。 一個使用案例範例是應用程式，可對S3進行個別呼叫。 新的測試結構如下所示：
+可以通过定义来模拟操作中的外部服务调用 `mock-<HOST_NAME>.json` 文件，其中HOST_NAME是要模拟的主机。 示例用例是对S3进行单独调用的应用程序。 新的测试结构将如下所示：
 
 ```json
 test/
@@ -84,7 +84,7 @@ test/
         mock-<HOST_NAME2>.json
 ```
 
-模擬檔案是JSON格式的http回應。 如需詳細資訊，請參閱 [本檔案](https://www.mock-server.com/mock_server/creating_expectations.html). 如果要模擬多個主機名稱，請定義多個 `mock-<mocked-host>.json` 檔案。 以下是的範例模型檔案 `google.com` 已命名 `mock-google.com.json`：
+模拟文件是JSON格式的http响应。 有关更多信息，请参阅 [本文档](https://www.mock-server.com/mock_server/creating_expectations.html). 如果要模拟多个主机名，请定义多个 `mock-<mocked-host>.json` 文件。 以下是的示例模拟文件 `google.com` 已命名 `mock-google.com.json`：
 
 ```json
 [{
@@ -101,11 +101,11 @@ test/
 }]
 ```
 
-範例 `worker-animal-pictures` 包含 [模擬檔案](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/test/asset-compute/worker-animal-pictures/simple-test/mock-upload.wikimedia.org.json) 與其互動的Wikimedia服務。
+示例 `worker-animal-pictures` 包含 [模拟文件](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/test/asset-compute/worker-animal-pictures/simple-test/mock-upload.wikimedia.org.json) 与之交互的维基媒体服务。
 
-#### 在測試案例之間共用檔案 {#share-files-across-test-cases}
+#### 跨测试用例共享文件 {#share-files-across-test-cases}
 
-如果您共用，建議使用相對符號連結 `file.*`， `params.json` 或 `validate` 跨多個測試的指令碼。 Git支援這些功能。 請務必為您的共用檔案指定唯一的名稱，因為您可能有不同的檔案。 在以下範例中，測試會混合及比對一些共用檔案，以及它們自己的檔案：
+如果共享，建议使用相对符号链接 `file.*`， `params.json` 或 `validate` 脚本跨多个测试。 它们受Git支持。 请确保为共享文件指定唯一的名称，因为您可能具有不同的名称。 在下面的示例中，测试将混合并匹配一些共享文件及其自己的文件：
 
 ```json
 tests/
@@ -133,15 +133,15 @@ tests/
         validate
 ```
 
-### 測試預期的錯誤 {#test-unexpected-errors}
+### 测试预期错误 {#test-unexpected-errors}
 
-錯誤測試案例不應包含預期的 `rendition.*` 檔案且應該定義預期的 `errorReason` 內部 `params.json` 檔案。
+错误测试用例不应包含预期 `rendition.*` 文件，并且应该定义预期的 `errorReason` 内部 `params.json` 文件。
 
 >[!NOTE]
 >
->如果測試案例不包含預期的 `rendition.*` 檔案且未定義預期的 `errorReason` 內部 `params.json` 檔案，則視為包含下列專案的錯誤案例： `errorReason`.
+>如果测试用例不包含预期的 `rendition.*` 文件并且未定义预期的 `errorReason` 内部 `params.json` 文件，则假定为包含任何 `errorReason`.
 
-錯誤測試案例結構：
+错误测试用例结构：
 
 ```json
 <error_test_case>/
@@ -149,7 +149,7 @@ tests/
     params.json
 ```
 
-含有錯誤原因的引數檔：
+带有错误原因的参数文件：
 
 ```javascript
 {
@@ -158,26 +158,26 @@ tests/
 }
 ```
 
-請參閱完整清單和說明 [asset compute錯誤原因](https://github.com/adobe/asset-compute-commons#error-reasons).
+请参阅的完整列表和描述 [asset compute错误原因](https://github.com/adobe/asset-compute-commons#error-reasons).
 
-## 對自訂應用程式進行偵錯 {#debug-custom-worker}
+## 调试自定义应用程序 {#debug-custom-worker}
 
-下列步驟顯示如何使用Visual Studio Code偵錯自訂應用程式。 它可讓您檢視即時記錄、點選中斷點和逐步執行程式碼，以及在每次啟用時即時重新載入本機程式碼變更。
+以下步骤显示如何使用Visual Studio Code调试自定义应用程序。 它允许查看实时日志、点击断点和逐步执行代码，以及在每次激活时实时重新加载本地代码更改。
 
-這些步驟中的許多步驟通常都是透過以下方式自動化： `aio` 開箱即用，請參閱以下的「偵錯應用程式」一節： [Adobe Developer App Builder檔案](https://developer.adobe.com/app-builder/docs/getting_started/first_app). 目前，以下步驟包含因應措施。
+其中许多步骤通常由以下步骤自动执行 `aio` 开箱即用地请参阅 [Adobe Developer App Builder文档](https://developer.adobe.com/app-builder/docs/getting_started/first_app). 目前，以下步骤包括一个解决方法。
 
-1. 安裝最新的 [wskdebug](https://github.com/apache/openwhisk-wskdebug) 來自GitHub和選購的 [Ngrok](https://www.npmjs.com/package/ngrok).
+1. 安装最新的 [wskdebug](https://github.com/apache/openwhisk-wskdebug) 来自GitHub和可选的 [Ngrok](https://www.npmjs.com/package/ngrok).
 
    ```shell
    npm install -g @openwhisk/wskdebug
    npm install -g ngrok --unsafe-perm=true
    ```
 
-1. 新增至您的使用者設定JSON檔案。 它會持續使用舊版VS程式碼偵錯工具，新版則會 [部分問題](https://github.com/apache/openwhisk-wskdebug/issues/74) 使用wskdebug： `"debug.javascript.usePreview": false`.
-1. 關閉透過以下方式開啟的任何應用程式例項： `aio app run`.
-1. 使用部署最新的程式碼 `aio app deploy`.
-1. 僅執行Asset computeDevtool，使用 `aio asset-compute devtool`. 保持開啟。
-1. 在VS程式碼編輯器中，將以下偵錯設定新增至 `launch.json`：
+1. 将添加到您的用户设置JSON文件。 它继续使用旧的VS代码调试器，新调试器具有 [一些问题](https://github.com/apache/openwhisk-wskdebug/issues/74) 使用wskdebug： `"debug.javascript.usePreview": false`.
+1. 关闭通过以下方式打开的任何应用程序实例 `aio app run`.
+1. 使用部署最新的代码 `aio app deploy`.
+1. 使用以下方式仅执行Asset computeDevtool `aio asset-compute devtool`. 保持打开。
+1. 在VS代码编辑器中，将以下调试配置添加到 `launch.json`：
 
    ```json
    {
@@ -198,16 +198,16 @@ tests/
    }
    ```
 
-   擷取 `ACTION NAME` 從輸出 `aio app deploy`.
+   获取 `ACTION NAME` 从输出 `aio app deploy`.
 
-1. 選取 `wskdebug worker` 從run/debug設定，然後按播放圖示。 等待它開始，直到它顯示 **[!UICONTROL 已準備好啟用]** 在 **[!UICONTROL 偵錯主控台]** 視窗。
+1. 选择 `wskdebug worker` 从run/debug configuration （运行/调试配置），然后按play （播放）图标。 等待它开始，直到它显示 **[!UICONTROL 准备激活]** 在 **[!UICONTROL 调试控制台]** 窗口。
 
-1. 按一下 **[!UICONTROL 執行]** 在Devtool中。 您可以看到在VS程式碼編輯器中執行的動作，並且記錄開始顯示。
+1. 单击 **[!UICONTROL 运行]** 在Devtool中。 您可以看到在VS代码编辑器中执行的操作，并且日志开始显示。
 
-1. 在程式碼中設定中斷點，然後再次執行，應該會點選。
+1. 在代码中设置断点，然后重新运行该断点。
 
-任何程式碼變更都會即時載入，並在下次啟用時立即生效。
+任何代码更改都将实时加载，并在下次激活后立即生效。
 
 >[!NOTE]
 >
->自訂應用程式中的每個請求都有兩個啟用。 第一個要求是Web動作，會在SDK程式碼中非同步呼叫自身。 第二個啟用是點選程式碼的啟用。
+>自定义应用程序中的每个请求都存在两个激活。 第一个请求是一个Web操作，该操作在SDK代码中异步调用自身。 第二个激活是点击代码的激活。
