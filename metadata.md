@@ -11,10 +11,11 @@ mini-toc-levels: 2
 feature-set: Experience Manager Assets
 git-repo: https://github.com/AdobeDocs/asset-compute.zh-Hans
 index: y
-source-git-commit: 66bad4afdc7b08e1e91418ec320b061e47c3683d
+recommendations: noDisplay
+source-git-commit: cb87ab6081d53610acf27419fa5103b3ae1ead03
 workflow-type: tm+mt
-source-wordcount: '130'
-ht-degree: 89%
+source-wordcount: '128'
+ht-degree: 91%
 
 ---
 
@@ -28,7 +29,7 @@ metadata.md 文件中包含存储库级别的元数据，这些元数据会传�
 | solution-title | 在文章标题中用作链接 |
 | solution-hub-url | 打开支持中心页面 |
 | solution-icon | 在解决方案标题旁边显示解决方案图标。尚未实施 |
-| getting-started-url | 指向入门页面的链接 |
+| getting-started-url | 指向快速入门页面的链接 |
 | tutorials-url | 指向视频教程（helpx 教程或 KT 教程）的链接 |
 | mini-toc-levels | 确定显示在右边栏中的标题级别数量。默认值为 2 |
 | git-repo | 指定供内部使用的主存储库的位置 |
